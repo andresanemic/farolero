@@ -6,22 +6,11 @@
   <a href="#english"><img src="https://img.shields.io/badge/status-kernel_refix_pending-D7B698?style=for-the-badge&labelColor=07111A" alt="Status: kernel refix pending"></a>
   <a href="./LICENSE"><img src="https://img.shields.io/badge/license-review--only-D7B698?style=for-the-badge&labelColor=07111A" alt="License: review only"></a>
   <a href="./docs/EVIDENCE.md"><img src="https://img.shields.io/badge/suite-8_of_13-E0C170?style=for-the-badge&labelColor=07111A" alt="Suite: 8 of 13 tests pass today"></a>
-  <a href="./docs/HOW_IT_WORKS.md"><img src="https://img.shields.io/badge/agreement_before_code-D7B698?style=for-the-badge&labelColor=07111A" alt="Agreement before code"></a>
+  <a href="./docs/HOW_IT_WORKS.md"><img src="https://img.shields.io/badge/agreement-written_before_code-D7B698?style=for-the-badge&labelColor=07111A" alt="Agreement written before code"></a>
   <a href="https://github.com/andresanemic/vespi"><img src="https://img.shields.io/badge/built_with-Vespi_%C2%B7_Lore_Plugin-E0C170?style=for-the-badge&labelColor=07111A" alt="Built with Vespi and Lore Plugin"></a>
 </p>
 
-<p align="center">
-  <b>Farolero gives AI agents authority that can be granted, narrowed, and checked.</b><br><br>
-  A person sets the limits; delegation can only reduce them; anything outside them returns blocked with a reason and a human next step.
-</p>
-
-<p align="center">
-  Do you build on Stellar, or are you judging Find Your Way or Meridian? Start here to see a project about agent authority built on Vespi and Lore Plugin.
-</p>
-
-<p align="center">
-  This repository contains the project agreement, its operating model, test evidence, and limits. The code will open during the judges' review period under a review-only license.
-</p>
+<p align="center"><b>Farolero is a project for making an AI agent’s authority visible before it acts.</b><br>Its agreement defines what a person grants, where delegation stops, and how the local record should be checked.</p>
 
 ---
 
@@ -30,50 +19,121 @@
 
 <a id="english"></a>
 
-**Farolero makes the authority behind an AI agent's action explicit and checkable.**
+**Farolero is designed to make an AI agent’s permission something a person can inspect.**
 
 > **The unit is a bounded permission: who may do what, to which subject, for which operation, until when, within what budget, and toward which destination.**
 
-Farolero combines an organization's AI agent register with a layer of authority granted by a responsible person. Agents act only within their permissions. A delegate can pass on a subset, never more. A separate verifier rereads the local store and recomputes the receipt rather than trusting the executor's report.
+## The problem
 
-**Why.** When an organization relies on prompts, cards, or chat to explain what an agent may do, it cannot readily show who authorized an action or whether the agent stayed within that authority. Farolero makes the permission concrete and makes an out-of-scope action stop visibly, so a person can decide what happens next.
+An organization may know that an agent is helping, yet still struggle to answer the questions that matter after an action: who authorized it, what exactly was allowed, and did the agent stay within that boundary? When the answer lives in a prompt, a card, or a chat, the explanation is easy to lose and hard to check from outside the conversation.
 
-**If you are judging Find Your Way or Meridian, start here.**
+Farolero starts from that practical gap. A responsible person grants a specific permission. The agent may pass on only a narrower subset. A request that falls outside the permission returns as blocked, with a reason and a named next step for a person. That turns a vague instruction into a boundary the project can test and record.
 
-1. **What it is and what governs it.** Read the [project scope and agreement](./docs/HOW_IT_WORKS.md#scope).
-2. **What the evidence shows.** See the [suite results and their limits](./docs/EVIDENCE.md#todays-suite-result).
-3. **What to inspect.** Follow the [local walkthrough](./docs/HOW_IT_WORKS.md#walk-through-one-local-record-entry) and the [rerun instructions](./docs/EVIDENCE.md#how-to-rerun-when-the-code-opens) when the code is available.
-4. **What is not verified.** Read the [evidence limits](./docs/EVIDENCE.md#limits-of-this-evidence) and [project limits](./docs/LEGAL_AND_LIMITS.md#project-limits).
+## If you are judging Find Your Way or Meridian, start here
+
+- Read the project foundation and its walkthrough. Start with [How it works](./docs/HOW_IT_WORKS.md).
+- Open the test record. See [Evidence](./docs/EVIDENCE.md).
+- Read the legal and verification limits. See [Legal and limits](./docs/LEGAL_AND_LIMITS.md).
+- Review the publication conditions. See [Code not included](./CODE_NOT_INCLUDED.md) and the [review-only license](./LICENSE).
 
 ## In one minute
 
-For the detailed fictional example of a permission, local effect, blocked return, and separate verification, see the [walkthrough](./docs/HOW_IT_WORKS.md#walk-through-one-local-record-entry).
+Imagine a fictional archive that asks an agent to add a line to a local project record. A responsible person grants permission for that subject, operation, time window, budget, and destination. The agent may ask a second registered agent to do part of the work, but that delegated permission must fit inside the first one. If the second agent tries to write to a different destination, Farolero blocks the request and sends the reason back to a person. If the request fits, the described effect is one local, reversible file write. A separate verifier rereads the store and recomputes the receipt. The example uses fictional data and explains the agreed path; it is not a captured run or a real institution’s workflow.
+
+## What it looks like in practice
+
+The case below is fictional. It follows the agreement’s rules rather than pretending to show output from the program. The public snapshot contains no captured output for the walkthrough command, so the only terminal-style excerpts here are exact test names and statuses from the supplied suite capture.
+
+Suppose a fictional community archive wants an agent called *Scribe* to add one entry to a local record. The person granting authority fixes the subject, operation, end time, budget, and destination. A second fictional agent, *Index*, can receive a smaller permission. The request to add the entry at the named local destination fits; a request to send it to another destination does not. That second request comes back blocked with a reason and a next step for the person, rather than being silently redirected.
+
+```text
+Fictional case, not program output
+
+Subject       the fictional archive record
+Operation     add one entry
+Time          the period named in the permission
+Budget        the limit named in the permission
+Destination   the local project record
+Delegation    a subset of Scribe’s permission only
+```
+
+The captured suite confirms that these boundaries are among the checks, and also shows where the current run falls short:
+
+```text
+✔ sin permiso, la ejecución queda bloqueada y vuelve a la persona con la salida
+✔ un delegado no puede recibir más de lo que su delegante tiene
+✔ con el mismo permiso y otro destino, el bloqueo nombra los dos destinos
+✖ el presupuesto es un límite duro y se acumula entre ejecuciones
+```
+
+The names and marks above are copied from the captured test output. The example record is invented for explanation; it is not supplied project data or an actual execution.
 
 ## Why Farolero
 
-For the rules behind bounded permissions, delegation, blocked returns, and independent receipt checks, read [how Farolero works](./docs/HOW_IT_WORKS.md#what-the-agreement-makes-enforceable).
-
-For what Farolero does not claim or connect to in this project run, see [legal and project limits](./docs/LEGAL_AND_LIMITS.md#what-the-project-does-not-claim).
+| You need | What it gives you | Where it lives |
+|---|---|---|
+| To know who may do what | A permission tied to a subject, operation, clock, budget, and destination | [How it works](./docs/HOW_IT_WORKS.md) |
+| To delegate without expanding authority | A child permission that must remain a subset of its parent | [How it works](./docs/HOW_IT_WORKS.md) |
+| To see what happens when a request does not fit | A blocked return with a reason and a named human next step | [How it works](./docs/HOW_IT_WORKS.md) |
+| To check a record independently | A verifier that rereads the local store and recomputes the receipt | [How it works](./docs/HOW_IT_WORKS.md) |
+| To distinguish a design rule from current evidence | Named test results, the kernel pin context, and their limits | [Evidence](./docs/EVIDENCE.md) |
 
 ## How it works
 
-The full walkthrough, actor rights, and person-facing meaning of each rule are in [`docs/HOW_IT_WORKS.md`](./docs/HOW_IT_WORKS.md).
+```text
+Person grants a bounded permission
+              |
+              v
+Registered agent acts within its limits
+              |
+              +---- delegate receives a subset only
+              |
+              v
+Check subject, operation, time, budget, and destination
+        | fits                         | does not fit
+        v                               v
+Local reversible effect            Blocked return to a person
+        |                            with reason and next step
+        v
+Receipt enters the local store
+              |
+              v
+Separate verifier rereads the store and recomputes the receipt
+```
+
+| Actor | Rights | Limits |
+|---|---|---|
+| Granting person | Grant, delegate, pause, and revoke permission | The only authority for those actions in this project run |
+| Permitted agent | Act within its granted permission | Cannot exceed its subject, operation, time, budget, or destination |
+| Delegate | Receive and exercise a narrower permission | Cannot receive or pass on more than its delegator has |
+| Verifier | Recheck the local effect and recompute the receipt from the store | Separate from execution; does not establish external truth |
+| Named destination | Receive the effect described by the permission | A named destination, not an integrated institution in this run |
+
+The receipt records what was requested, which permission applied or why it did not, what effect was made, who acted, what the verifier checked, and a content digest. The verifier reads the store again instead of treating the executor’s report as proof. See [the full walkthrough and rules](./docs/HOW_IT_WORKS.md).
+
+## What Farolero is not
+
+Farolero is not a passive directory, an identity system, a configuration dashboard, or a legal compliance product. In this project run it is not connected to an institution, network, blockchain, payment service, or testnet. Its described effect is a local and reversible file write.
 
 ## Evidence you can open
 
-The [evidence record](./docs/EVIDENCE.md) gives the named test results, the kernel pin context, the limits of the original adversarial cases, and instructions for rerunning the suite when the code opens. It also explains why there are no testnet transactions to inspect.
+The captured suite dated 2026-10-03 reports 13 tests: 8 pass and 5 fail. It covers permission boundaries, delegation, expiry, pausing authority, blocked returns, receipt tampering, verification, repeated effects, budget limits, and a readable local record. The current capture shows passing checks for absent permission, expiry, destination mismatch, narrowing delegation, pausing authority, blocked reasons, hand-edited receipt detection, and matching commit declarations in the five module headers.
 
-## Farolero, Vespi and Lore Plugin
+One failing check directly identifies the reason the snapshot is out of step: the consumed kernel’s digest in `continuity.js` differs from the project’s recorded pin. Farolero was built against Vespi kernel cut `54c20c7`; the installed kernel was 0.1.3 when checked on 2026-10-03. The project pins the kernel by digest module by module, so a changed kernel is meant to fail that check until the pin is reviewed and fixed. That refix is pending. Four other checks currently return `blocked` where verification was expected or fail to find the local effect line. They also ran against the moved kernel; they need a fresh run after the pin is aligned before anyone can tell whether those behaviors pass in the recorded context.
 
-[Vespi](https://github.com/andresanemic/vespi) supplies the kernel Farolero consumes; Farolero does not modify it. The project uses granted authority, kernel receipts, a human gate for actions outside permission, verification separate from execution, and receipt-based continuity. [Lore Plugin](https://github.com/andresanemic/lore-plugin) is part of the project foundation. The project agreement and code boundary remain Farolero's own.
+The adversarial phase wrote eight project RED cases before code and observed each fail. The available sources do not map those original cases one by one to the current test names. These are project checks, not an external audit. Read [Evidence](./docs/EVIDENCE.md) for the names, phase record, and rerun instructions.
 
-## What it does not do, and what is not verified
+## Farolero, Vespi, and Lore Plugin
 
-The [project limits](./docs/LEGAL_AND_LIMITS.md#project-limits) and [evidence limits](./docs/EVIDENCE.md#limits-of-this-evidence) describe the fictional data, local reversible effects, unverified behaviors, pending kernel refix, and claims this project does not make.
+[Vespi](https://github.com/andresanemic/vespi) supplies the kernel Farolero consumes. Farolero does not change that kernel. This project uses its granted-authority model, kernel receipts, a human gate when an action is outside permission, verification separate from execution, and continuity based on receipts. [Lore Plugin](https://github.com/andresanemic/lore-plugin) is part of the project foundation; Farolero’s agreement and publication boundary remain its own.
+
+## What is not verified
+
+All sample agents and records are fictional. The current run has no real personal, health, financial, or third-party data, and no external effect. The materials do not establish legal identity, the truth of an input, anyone’s legal authority, legal admissibility, legal compliance, institutional adoption, or readiness for production or use. The cited Chilean Law 21.719 is problem context in the agreement; its primary text was not reviewed for this run, and the implementation was not checked against it. No legal professional reviewed these materials. More detail is in [Legal and limits](./docs/LEGAL_AND_LIMITS.md).
 
 ## How to review this project
 
-Read [`docs/HOW_IT_WORKS.md`](./docs/HOW_IT_WORKS.md), [`docs/EVIDENCE.md`](./docs/EVIDENCE.md), and [`docs/LEGAL_AND_LIMITS.md`](./docs/LEGAL_AND_LIMITS.md) for the agreement, evidence, and limits. The code is not included today; [`CODE_NOT_INCLUDED.md`](./CODE_NOT_INCLUDED.md) explains when it will open. The review-only [`LICENSE`](./LICENSE) permits reading and cloning for evaluation and does not permit modifying the code.
+Start with [How it works](./docs/HOW_IT_WORKS.md) for the agreement translated into the operating model. Then open [Evidence](./docs/EVIDENCE.md) for the captured suite and its limits, and [Legal and limits](./docs/LEGAL_AND_LIMITS.md) for the boundary of the claims. The source code is not included today; [Code not included](./CODE_NOT_INCLUDED.md) explains the publication condition. The [review-only license](./LICENSE) permits reading and cloning for evaluation, not modifying the code.
 
 ## Author
 
@@ -96,50 +156,121 @@ Read [`docs/HOW_IT_WORKS.md`](./docs/HOW_IT_WORKS.md), [`docs/EVIDENCE.md`](./do
 
 <a id="espanol"></a>
 
-**Farolero hace explícita y verificable la autoridad detrás de la acción de un agente de IA.**
+**Farolero es un proyecto para volver visible la autoridad de un agente de IA antes de que actúe.**
 
-> **La unidad es un permiso acotado: quién puede hacer qué, respecto de qué, para qué operación, hasta cuándo, con qué presupuesto y hacia qué destino.**
+> **La unidad es un permiso acotado: quién puede hacer qué, respecto de qué sujeto, para qué operación, hasta cuándo, con qué presupuesto y hacia qué destino.**
 
-Farolero combina un registro de agentes de IA de una organización con una capa de autoridad que otorga una persona responsable. Los agentes actúan solo dentro de sus permisos. Un delegado puede transmitir un subconjunto, nunca más. Un verificador aparte vuelve a leer el almacén local y recalcula el recibo en vez de confiar en el informe del ejecutor.
+## El problema
 
-**Por qué.** Cuando una organización depende de prompts, fichas o chats para explicar lo que puede hacer un agente, no puede mostrar fácilmente quién autorizó una acción ni si el agente se mantuvo dentro de esa autoridad. Farolero concreta el permiso y hace visible la detención de una acción fuera de alcance, para que una persona decida qué sigue.
+Una organización puede saber que un agente la está ayudando y, aun así, tener dificultades para responder las preguntas que importan después de una acción: quién la autorizó, qué estaba permitido exactamente y si el agente se mantuvo dentro de ese límite. Cuando la respuesta vive en un *prompt*, una ficha o un chat, es fácil perder la explicación y difícil comprobarla desde fuera de la conversación.
 
-**Si estás evaluando Find Your Way o Meridian, empieza aquí.**
+Farolero parte de esa brecha práctica. El acuerdo define cómo una persona responsable concede un permiso concreto, cómo el agente puede transmitir solo un subconjunto más estrecho y cómo una solicitud fuera del límite debe volver bloqueada, con una razón y un siguiente paso nombrado para una persona. Así, una instrucción vaga se convierte en un límite que el proyecto puede probar y registrar.
 
-1. **Qué es y qué lo rige.** Lee el [alcance y el acuerdo del proyecto](./docs/HOW_IT_WORKS.md#alcance).
-2. **Qué muestra la evidencia.** Consulta los [resultados de la suite y sus límites](./docs/EVIDENCE.md#resultado-de-la-suite-hoy).
-3. **Qué inspeccionar.** Sigue el [recorrido local](./docs/HOW_IT_WORKS.md#recorrido-una-linea-en-un-registro-local) y las [instrucciones para volver a correr las pruebas](./docs/EVIDENCE.md#como-volver-a-correr-las-pruebas-cuando-se-abra-el-codigo) cuando el código esté disponible.
-4. **Qué no está verificado.** Lee los [límites de la evidencia](./docs/EVIDENCE.md#limites-de-esta-evidencia) y los [límites del proyecto](./docs/LEGAL_AND_LIMITS.md#limites-del-proyecto).
+## Si estás evaluando Find Your Way o Meridian, empieza aquí
+
+- Lee la base del proyecto y su recorrido. Empieza por [Cómo funciona](./docs/HOW_IT_WORKS.md).
+- Abre el registro de pruebas. Consulta [Evidencia](./docs/EVIDENCE.md).
+- Lee los límites jurídicos y de verificación. Consulta [Marco legal y límites](./docs/LEGAL_AND_LIMITS.md).
+- Revisa las condiciones de publicación. Consulta [Código no incluido](./CODE_NOT_INCLUDED.md) y la [licencia de solo revisión](./LICENSE).
 
 ## En un minuto
 
-Para el ejemplo ficticio detallado de un permiso, un efecto local, una devolución bloqueada y una verificación separada, consulta el [recorrido](./docs/HOW_IT_WORKS.md#recorrido-una-linea-en-un-registro-local).
+Imagina un archivo comunitario ficticio que pide a un agente añadir una línea a un registro local del proyecto. Una persona responsable concede permiso para ese sujeto, operación, plazo, presupuesto y destino. El agente puede encargar parte del trabajo a un segundo agente registrado, pero ese permiso delegado debe caber dentro del primero. Si el segundo agente intenta escribir en otro destino, Farolero bloquea la solicitud y devuelve la razón a una persona. Si la solicitud cabe, el efecto descrito es escribir una línea local y reversible en un archivo. Un verificador aparte vuelve a leer el almacén y recalcula el recibo. El ejemplo usa datos de fantasía y explica el recorrido acordado; no es una corrida capturada ni el flujo de una institución real.
+
+## Cómo se ve en la práctica
+
+El caso siguiente es de fantasía. Sigue las reglas del acuerdo, no pretende mostrar la salida del programa. La captura pública no contiene la salida del comando de recorrido; por eso, los únicos extractos con aspecto de terminal aquí son nombres y estados exactos de pruebas de la captura suministrada.
+
+Supongamos que un archivo comunitario ficticio quiere que un agente llamado *Escriba* añada una entrada a un registro local. La persona que otorga autoridad fija el sujeto, la operación, el vencimiento, el presupuesto y el destino. Un segundo agente ficticio, *Índice*, puede recibir un permiso más acotado. La solicitud de añadir una entrada al destino local nombrado cabe; una solicitud para enviarla a otro destino no. Esa segunda solicitud vuelve bloqueada, con una razón y un siguiente paso para la persona, en vez de redirigirse en silencio.
+
+```text
+Caso de fantasía, no es salida del programa
+
+Sujeto        el registro del archivo ficticio
+Operación     añadir una entrada
+Plazo         el periodo indicado en el permiso
+Presupuesto   el límite indicado en el permiso
+Destino       el registro local del proyecto
+Delegación    solo un subconjunto del permiso de Escriba
+```
+
+La suite capturada confirma que estos límites están entre las comprobaciones y también muestra dónde la corrida actual queda corta:
+
+```text
+✔ sin permiso, la ejecución queda bloqueada y vuelve a la persona con la salida
+✔ un delegado no puede recibir más de lo que su delegante tiene
+✔ con el mismo permiso y otro destino, el bloqueo nombra los dos destinos
+✖ el presupuesto es un límite duro y se acumula entre ejecuciones
+```
+
+Los nombres y marcas anteriores se copian de la salida capturada de pruebas. El registro de ejemplo es inventado para explicar el caso; no proviene de los datos suministrados ni de una ejecución real.
 
 ## Por qué Farolero
 
-Para las reglas de permisos acotados, delegación, bloqueos y comprobación independiente de recibos, lee [cómo funciona Farolero](./docs/HOW_IT_WORKS.md#que-hace-cumplir-el-acuerdo).
-
-Consulta los [límites y lo que el proyecto no afirma](./docs/LEGAL_AND_LIMITS.md#lo-que-el-proyecto-no-afirma).
+| Necesitas | Qué te da | Dónde vive |
+|---|---|---|
+| Saber quién puede hacer qué | Un permiso ligado a sujeto, operación, reloj, presupuesto y destino | [Cómo funciona](./docs/HOW_IT_WORKS.md) |
+| Delegar sin ampliar la autoridad | Un permiso derivado que debe seguir dentro del permiso de origen | [Cómo funciona](./docs/HOW_IT_WORKS.md) |
+| Ver qué ocurre cuando una solicitud no cabe | Una devolución bloqueada con razón y siguiente paso para una persona | [Cómo funciona](./docs/HOW_IT_WORKS.md) |
+| Comprobar un registro por separado | Un verificador que relee el almacén local y recalcula el recibo | [Cómo funciona](./docs/HOW_IT_WORKS.md) |
+| Distinguir una regla de diseño de la evidencia actual | Resultados de pruebas con nombre, contexto del pin del kernel y sus límites | [Evidencia](./docs/EVIDENCE.md) |
 
 ## Cómo funciona
 
-El recorrido completo, los derechos de cada actor y el sentido cotidiano de cada regla están en [`docs/HOW_IT_WORKS.md`](./docs/HOW_IT_WORKS.md).
+```text
+La persona concede un permiso acotado
+              |
+              v
+El agente registrado actúa dentro de sus límites
+              |
+              +---- el delegado recibe solo un subconjunto
+              |
+              v
+Comprobación de sujeto, operación, plazo, presupuesto y destino
+        | cabe                                  | no cabe
+        v                                       v
+Efecto local y reversible                Devolución bloqueada a una persona
+        |                                  con razón y siguiente paso
+        v
+El recibo entra al almacén local
+              |
+              v
+Un verificador aparte relee el almacén y recalcula el recibo
+```
+
+| Actor | Derechos | Límites |
+|---|---|---|
+| Persona que otorga | Conceder, delegar, pausar y revocar permisos | Única autoridad para esas acciones en este recorrido del proyecto |
+| Agente con permiso | Actuar dentro del permiso concedido | No puede exceder sujeto, operación, plazo, presupuesto ni destino |
+| Delegado | Recibir y ejercer un permiso más acotado | No puede recibir ni transmitir más de lo que tiene quien delega |
+| Verificador | Volver a comprobar el efecto local y recalcular el recibo desde el almacén | Está separado de la ejecución y no establece una verdad externa |
+| Destino nombrado | Recibir el efecto descrito por el permiso | Es un destino nombrado, no una institución integrada en este recorrido |
+
+El recibo registra qué se pidió, qué permiso aplicó o por qué no, qué efecto se hizo, quién actuó, qué comprobó el verificador y un digest del contenido. El verificador vuelve a leer el almacén en vez de tratar el informe del ejecutor como prueba. Consulta [el recorrido completo y sus reglas](./docs/HOW_IT_WORKS.md).
+
+## Qué no es Farolero
+
+Farolero no es un directorio pasivo, un sistema de identidad, un panel de configuración ni un producto de cumplimiento legal. En este recorrido del proyecto no se conecta con una institución, red, blockchain, servicio de pagos ni testnet. El efecto descrito es escribir un archivo local y reversible.
 
 ## Evidencia que puedes abrir
 
-El [registro de evidencia](./docs/EVIDENCE.md) presenta los resultados con nombre, el contexto del pin del kernel, los límites de los casos adversariales originales y las instrucciones para volver a correr la suite cuando se abra el código. También explica por qué no hay transacciones de testnet que revisar.
+La suite capturada el 2026-10-03 informa 13 pruebas: 8 pasan y 5 fallan. Cubre límites de permisos, delegación, vencimiento, autoridad para pausar, devoluciones bloqueadas, manipulación de recibos, verificación, efectos repetidos, presupuesto y un registro local legible. En la captura actual pasan las comprobaciones de permiso ausente, vencimiento, destino distinto, delegación que reduce, autoridad para pausar, razones de bloqueo, detección de un recibo editado a mano y declaración del mismo commit en los encabezados de los cinco módulos.
+
+Una prueba fallida identifica directamente por qué la captura está desalineada: el digest del kernel consumido en `continuity.js` difiere del pin registrado por el proyecto. Farolero se construyó sobre el corte `54c20c7` del kernel Vespi; el kernel instalado era 0.1.3 al comprobarlo el 2026-10-03. El proyecto fija el kernel por digest y módulo, así que el cambio del kernel debe hacer fallar esa comprobación hasta que el pin se revise y se vuelva a fijar. Esa refijación está pendiente. Otras cuatro pruebas ahora devuelven `bloqueado` donde se esperaba verificar, o no encuentran la línea del efecto local. También corrieron contra el kernel movido; deben repetirse cuando el pin esté alineado para saber si esas conductas pasan en el contexto registrado.
+
+La fase adversarial escribió ocho casos RED del proyecto antes del código y observó fallar cada uno. Las fuentes disponibles no relacionan esos casos originales uno por uno con los nombres actuales de pruebas. Son comprobaciones del proyecto, no una auditoría externa. Consulta [Evidencia](./docs/EVIDENCE.md) para ver los nombres, el registro de fases y cómo repetirlas.
 
 ## Farolero, Vespi y Lore Plugin
 
-[Vespi](https://github.com/andresanemic/vespi) aporta el kernel que Farolero consume; Farolero no lo modifica. El proyecto usa autoridad otorgada, recibos del kernel, una compuerta humana para acciones fuera de permiso, verificación separada de la ejecución y continuidad basada en recibos. [Lore Plugin](https://github.com/andresanemic/lore-plugin) forma parte de los cimientos del proyecto. El acuerdo y los límites del código pertenecen a Farolero.
+[Vespi](https://github.com/andresanemic/vespi) aporta el kernel que consume Farolero. Farolero no modifica ese kernel. Este proyecto usa su modelo de autoridad otorgada, los recibos del kernel, una compuerta humana si una acción queda fuera del permiso, la verificación separada de la ejecución y la continuidad basada en recibos. [Lore Plugin](https://github.com/andresanemic/lore-plugin) forma parte de los cimientos del proyecto; el acuerdo y los límites de publicación de Farolero son propios.
 
-## Lo que no hace y lo que no está verificado
+## Qué no está verificado
 
-Los [límites del proyecto](./docs/LEGAL_AND_LIMITS.md#limites-del-proyecto) y los [límites de la evidencia](./docs/EVIDENCE.md#limites-de-esta-evidencia) describen los datos ficticios, los efectos locales y reversibles, las conductas no verificadas, la refijación pendiente y lo que el proyecto no afirma.
+Todos los agentes y registros de ejemplo son ficticios. El recorrido actual no usa datos personales, de salud, financieros ni de terceros reales, y no produce efectos externos. Los materiales no establecen identidad legal, verdad de una entrada, autoridad jurídica de una persona, admisibilidad jurídica, cumplimiento legal, adopción institucional ni preparación para producción o uso. El acuerdo cita la Ley 21.719 de Chile como contexto del problema; en este recorrido no se revisó su texto primario ni se comprobó la implementación frente a ella. Ningún profesional del derecho revisó estos materiales. Hay más detalle en [Marco legal y límites](./docs/LEGAL_AND_LIMITS.md).
 
 ## Cómo revisar este proyecto
 
-Lee [`docs/HOW_IT_WORKS.md`](./docs/HOW_IT_WORKS.md), [`docs/EVIDENCE.md`](./docs/EVIDENCE.md) y [`docs/LEGAL_AND_LIMITS.md`](./docs/LEGAL_AND_LIMITS.md) para consultar el acuerdo, la evidencia y los límites. Hoy no se incluye el código; [`CODE_NOT_INCLUDED.md`](./CODE_NOT_INCLUDED.md) explica cuándo se abrirá. La [`LICENSE`](./LICENSE) de solo revisión permite leer y clonar para evaluar, no modificar el código.
+Empieza por [Cómo funciona](./docs/HOW_IT_WORKS.md), donde el acuerdo se expresa como modelo operativo. Después abre [Evidencia](./docs/EVIDENCE.md) para consultar la suite capturada y sus límites, y [Marco legal y límites](./docs/LEGAL_AND_LIMITS.md) para conocer la frontera de las afirmaciones. El código fuente no está incluido hoy; [Código no incluido](./CODE_NOT_INCLUDED.md) explica la condición de publicación. La [licencia de solo revisión](./LICENSE) permite leer y clonar para evaluar, no modificar el código.
 
 ## Autoría
 
@@ -153,6 +284,6 @@ Lee [`docs/HOW_IT_WORKS.md`](./docs/HOW_IT_WORKS.md), [`docs/EVIDENCE.md`](./doc
 
 ---
 
-[Cómo funciona](./docs/HOW_IT_WORKS.md) · [Evidencia](./docs/EVIDENCE.md) · [Aspectos legales y límites](./docs/LEGAL_AND_LIMITS.md) · [Código no incluido](./CODE_NOT_INCLUDED.md) · [Licencia de solo revisión](./LICENSE) · [Vespi](https://github.com/andresanemic/vespi) · [Lore Plugin](https://github.com/andresanemic/lore-plugin)
+[Cómo funciona](./docs/HOW_IT_WORKS.md) · [Evidencia](./docs/EVIDENCE.md) · [Marco legal y límites](./docs/LEGAL_AND_LIMITS.md) · [Código no incluido](./CODE_NOT_INCLUDED.md) · [Licencia de solo revisión](./LICENSE) · [Vespi](https://github.com/andresanemic/vespi) · [Lore Plugin](https://github.com/andresanemic/lore-plugin)
 
 </details>
