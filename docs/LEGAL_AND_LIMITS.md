@@ -16,7 +16,7 @@ No competent legal professional has reviewed the project materials. This documen
 
 ## Project limits
 
-The effect is a local, reversible write to a project file. No network, blockchain, payment, testnet anchor, or institutional integration is active. Farolero consumes the Vespi kernel and does not modify it. The code is not included in this public repository today. As checked on 2026-10-03, the suite is 8 of 13 against the current environment because the consumed kernel pin is out of step with installed kernel 0.1.3. The refix is pending.
+The effect is a local, reversible write to a project file. No network, blockchain, payment, testnet anchor, or institutional integration is active. Farolero consumes the Vespi kernel and does not modify it. The code is not included in this public repository today. The suite's captured result and the pending kernel refix are described in [`EVIDENCE.md`](EVIDENCE.md).
 
 ## Open questions
 
@@ -35,6 +35,8 @@ El acuerdo del proyecto cita la Ley 21.719 de Chile como ejemplo del tipo de exi
 
 Una persona competente en derecho no ha revisado los materiales del proyecto. Este documento no es asesoría legal ni presenta una opinión jurídica.
 
+<a id="lo-que-el-proyecto-no-afirma"></a>
+
 ### Lo que el proyecto no afirma
 
 - No afirma cumplir la Ley 21.719 ni ninguna otra ley o norma.
@@ -43,9 +45,11 @@ Una persona competente en derecho no ha revisado los materiales del proyecto. Es
 - No afirma que el sistema sea un producto terminado o esté listo para usarse.
 - En este recorrido no procesa datos personales, de salud, financieros ni de terceros reales. Todos los datos de ejemplo y agentes son de fantasía.
 
+<a id="limites-del-proyecto"></a>
+
 ### Límites del proyecto
 
-El efecto es escribir de forma local y reversible en un archivo del proyecto. No hay red, blockchain, pagos, anclaje en testnet ni integración institucional activa. Farolero consume el kernel Vespi y no lo modifica. Hoy este repositorio público no incluye el código. Según la comprobación del 2026-10-03, la suite está 8 de 13 contra el entorno actual porque el pin del kernel consumido no coincide con el kernel 0.1.3 instalado. La refijación está pendiente.
+El efecto es escribir de forma local y reversible en un archivo del proyecto. No hay red, blockchain, pagos, anclaje en testnet ni integración institucional activa. Farolero consume el kernel Vespi y no lo modifica. Hoy este repositorio público no incluye el código. El resultado capturado de la suite y la refijación pendiente del kernel se describen en [`EVIDENCE.md`](EVIDENCE.md).
 
 ### Preguntas abiertas
 

@@ -43,13 +43,15 @@ The effect described here is a local file write. No record is sent to an externa
 
 ## What the evidence can show
 
-The named suite checks permission blocks and limits, delegation, expiry, pause authority, receipt tampering, repeat attempts, verifier independence, and whether the record is readable as a local file. The result checked on 2026-10-03 is 8 of 13. It is not a complete assurance of every possible input or deployment. The current kernel pin mismatch means the five failures need to be read in that context; see [`EVIDENCE.md`](EVIDENCE.md).
+The named suite checks permission blocks and limits, delegation, expiry, pause authority, receipt tampering, repeat attempts, verifier independence, and whether the record is readable as a local file. Its captured result and kernel pin context are in [`EVIDENCE.md`](EVIDENCE.md). The suite is not a complete assurance of every possible input or deployment.
 
 ## What this does not prove
 
 A receipt and a local file do not establish an agent's real-world identity, the truth of an input, a person's legal authority, or legal compliance. The example does not show an institutional integration, external effect, network operation, blockchain anchor, payment, or testnet transaction. The current results do not establish production readiness or readiness for use. The kernel refix is pending.
 
 ## Español
+
+<a id="alcance"></a>
 
 ### Alcance
 
@@ -65,6 +67,8 @@ Farolero combina un registro de agentes de IA con una capa de autoridad otorgada
 | Verificador | Volver a comprobar el efecto local y recalcular el recibo desde el almacén | Trabaja por separado de la ejecución y no depende del informe del ejecutor |
 | Destino nombrado | Recibir el efecto descrito | Es un destino nombrado, no una institución integrada en este recorrido |
 
+<a id="recorrido-una-linea-en-un-registro-local"></a>
+
 ### Recorrido: una línea en un registro local
 
 Imagina una organización ficticia con un agente ficticio al que le piden agregar una línea a un registro local del proyecto. El ejemplo explica las reglas; no representa a un cliente, institución ni operación real.
@@ -78,6 +82,8 @@ Imagina una organización ficticia con un agente ficticio al que le piden agrega
 7. **Evitar la repetición.** Un efecto con la misma clave no se ejecuta dos veces. El segundo intento devuelve el recibo del primero y no vuelve a tocar el destino.
 
 El efecto descrito es escribir un archivo local. No se envía ningún registro a un destino externo ni a una red.
+
+<a id="que-hace-cumplir-el-acuerdo"></a>
 
 ### Qué hace cumplir el acuerdo
 
@@ -94,7 +100,7 @@ El efecto descrito es escribir un archivo local. No se envía ningún registro a
 
 ### Qué puede mostrar la evidencia
 
-Los nombres de las pruebas cubren bloqueos y límites de permisos, delegación, vencimiento, autoridad para pausar, manipulación de recibos, intentos repetidos, verificación independiente y legibilidad del registro local. Según la comprobación del 2026-10-03, la suite está 8 de 13. No ofrece garantía sobre toda entrada o despliegue posible. Las cinco fallas actuales deben leerse en el contexto del desajuste del pin del kernel; consulta [`EVIDENCE.md`](EVIDENCE.md).
+Los nombres de las pruebas cubren bloqueos y límites de permisos, delegación, vencimiento, autoridad para pausar, manipulación de recibos, intentos repetidos, verificación independiente y legibilidad del registro local. El resultado capturado y el contexto del pin del kernel están en [`EVIDENCE.md`](EVIDENCE.md). La suite no ofrece garantía sobre toda entrada o despliegue posible.
 
 ### Qué no demuestra
 

@@ -40,66 +40,28 @@ Farolero combines an organization's AI agent register with a layer of authority 
 
 **If you are judging Find Your Way or Meridian, start here.**
 
-1. **What it is.** A local project for granting, narrowing, exercising, and checking AI agent permissions.
-2. **What governs it.** Read the project agreement first in [`docs/HOW_IT_WORKS.md`](./docs/HOW_IT_WORKS.md), then compare its rules with the implementation when the code opens.
-3. **What the suite says today.** [`docs/EVIDENCE.md`](./docs/EVIDENCE.md) lists the 13 named tests and the result checked on 2026-10-03: 8 pass and 5 fail while the kernel pin is out of step with installed kernel 0.1.3.
-4. **What to inspect.** Follow the example in [`docs/HOW_IT_WORKS.md`](./docs/HOW_IT_WORKS.md), then use the test names and rerun instructions in [`docs/EVIDENCE.md`](./docs/EVIDENCE.md) when the code is available.
-5. **What is not verified.** The kernel refix is pending, and a working path is not a finished or deployment-ready product. The project does not claim compliance with any law.
+1. **What it is and what governs it.** Read the [project scope and agreement](./docs/HOW_IT_WORKS.md#scope).
+2. **What the evidence shows.** See the [suite results and their limits](./docs/EVIDENCE.md#todays-suite-result).
+3. **What to inspect.** Follow the [local walkthrough](./docs/HOW_IT_WORKS.md#walk-through-one-local-record-entry) and the [rerun instructions](./docs/EVIDENCE.md#how-to-rerun-when-the-code-opens) when the code is available.
+4. **What is not verified.** Read the [evidence limits](./docs/EVIDENCE.md#limits-of-this-evidence) and [project limits](./docs/LEGAL_AND_LIMITS.md#project-limits).
 
 ## In one minute
 
-Imagine a fictional organization that asks one of its fictional agents to write a line to a local project record. A responsible person grants permission for that named operation, destination, time window, and budget. The agent may delegate only a smaller permission to another registered agent. If the delegated agent tries a different destination or exceeds the budget, Farolero blocks the action and returns the reason and a human next step. If it fits, the action writes one local line and creates a receipt. A separate verifier rereads the store and recomputes that receipt. The example stays local and uses fictional data; it does not contact an institution or network.
+For the detailed fictional example of a permission, local effect, blocked return, and separate verification, see the [walkthrough](./docs/HOW_IT_WORKS.md#walk-through-one-local-record-entry).
 
 ## Why Farolero
 
-| You need | What it gives you | Where it lives |
-|---|---|---|
-| A permission with clear boundaries | A subject, object, operation, clock, budget, and destination that must all fit | [`docs/HOW_IT_WORKS.md`](./docs/HOW_IT_WORKS.md) |
-| Delegation without expanded authority | A delegate receives only a subset of the delegating permission | [`docs/HOW_IT_WORKS.md`](./docs/HOW_IT_WORKS.md) |
-| A visible stop when an action does not fit | A blocked result with its reason and a named human next step | [`docs/HOW_IT_WORKS.md`](./docs/HOW_IT_WORKS.md) |
-| A record that can be checked separately | A receipt recomputed by a verifier from the local store | [`docs/HOW_IT_WORKS.md`](./docs/HOW_IT_WORKS.md) |
-| Evidence of what has and has not passed | The 13 test names, the 8 of 13 result, and the kernel pin context | [`docs/EVIDENCE.md`](./docs/EVIDENCE.md) |
+For the rules behind bounded permissions, delegation, blocked returns, and independent receipt checks, read [how Farolero works](./docs/HOW_IT_WORKS.md#what-the-agreement-makes-enforceable).
 
-**What it is not.** Farolero is not an identity system, a passive agent directory, a configuration dashboard, a legal compliance product, or an institutional integration. It does not use blockchain, payments, a testnet anchor, or a network connection in this project run.
+For what Farolero does not claim or connect to in this project run, see [legal and project limits](./docs/LEGAL_AND_LIMITS.md#what-the-project-does-not-claim).
 
 ## How it works
 
-```
-Person grants a bounded permission
-              |
-              v
-Registered agent acts within its limits
-              |
-              +---- delegate receives a subset only
-              |
-              v
-Permission check: subject, operation, time, budget, destination
-       | fits                         | does not fit
-       v                               v
-One local reversible effect        Blocked result returns to the person
-       |                               with reason and human next step
-       v
-Receipt is written to the local store
-              |
-              v
-Separate verifier rereads the store and recomputes the receipt
-```
-
-| Actor | Rights | Limits |
-|---|---|---|
-| Granting person | Grant, delegate, pause, and revoke permissions | The person is the only authority for these actions in this project |
-| Permitted agent | Perform an action within its granted permission | It cannot act beyond the permission's subject, operation, clock, budget, or destination |
-| Delegate | Receive and exercise a narrower permission | It cannot pass on more than it received |
-| Verifier | Recheck the effect and recompute a receipt from the store | It does not trust the executor's report or establish external truth |
-| Named destination | Receive the local effect described by the permission | It is a destination, not an integrated institution in this project run |
-
-The full walk-through and the person-facing meaning of each rule are in [`docs/HOW_IT_WORKS.md`](./docs/HOW_IT_WORKS.md).
+The full walkthrough, actor rights, and person-facing meaning of each rule are in [`docs/HOW_IT_WORKS.md`](./docs/HOW_IT_WORKS.md).
 
 ## Evidence you can open
 
-The source snapshot lists 13 named tests. As checked on 2026-10-03, eight pass and five fail. One failure is the explicit kernel digest check. The project was built against Vespi kernel commit `54c20c7`; each project fixes the kernel it consumes by digest and deliberately fails when that kernel moves. Against installed kernel 0.1.3, part of this suite fails until the pin is updated and checked again. That refix is pending. The captured output also shows four behavior checks returning blocked where verified was expected, or failing to find a local effect line. They need to be rerun after the pin is aligned to establish whether they pass against the recorded kernel. A working path against `54c20c7` is not a finished product or proof of readiness for use.
-
-Before code, the adversarial RED phase wrote eight cases and observed each fail. The agreement states the rules they should protect, and the current suite names tests for permission scope, delegation, time and destination limits, budget, repeated effects, receipt integrity, independent verification, human pause authority, blocked returns, and a readable local record. The supplied sources do not map each of the eight original RED cases one by one to these current test names. [`docs/EVIDENCE.md`](./docs/EVIDENCE.md) explains what the available results do and do not demonstrate, and how to run the suite when the code opens. There are no testnet transactions to inspect because this project does not use a blockchain or testnet.
+The [evidence record](./docs/EVIDENCE.md) gives the named test results, the kernel pin context, the limits of the original adversarial cases, and instructions for rerunning the suite when the code opens. It also explains why there are no testnet transactions to inspect.
 
 ## Farolero, Vespi and Lore Plugin
 
@@ -107,11 +69,11 @@ Before code, the adversarial RED phase wrote eight cases and observed each fail.
 
 ## What it does not do, and what is not verified
 
-All example records and actors are fictional. There is no real personal, health, financial, or third-party data. Effects are local and reversible. The project does not send records to a network, operate a blockchain, make payments, anchor to testnet, or integrate with an institution. It does not claim legal compliance. As checked on 2026-10-03, the suite is 8 of 13 because its pinned kernel differs from installed kernel 0.1.3; refixing is pending. The nine coded projects were built on 2026-09-29 against the `54c20c7` kernel cut, and their records report green against that cut. Those records show a path that worked in that context, not a finished product or readiness for use. See [`docs/LEGAL_AND_LIMITS.md`](./docs/LEGAL_AND_LIMITS.md) and [`docs/EVIDENCE.md`](./docs/EVIDENCE.md).
+The [project limits](./docs/LEGAL_AND_LIMITS.md#project-limits) and [evidence limits](./docs/EVIDENCE.md#limits-of-this-evidence) describe the fictional data, local reversible effects, unverified behaviors, pending kernel refix, and claims this project does not make.
 
 ## How to review this project
 
-Start with the agreement translated into plain language in [`docs/HOW_IT_WORKS.md`](./docs/HOW_IT_WORKS.md). Then read [`docs/EVIDENCE.md`](./docs/EVIDENCE.md) for the named tests, today's 8 of 13 result, and the steps to rerun them when the code opens. Read [`docs/LEGAL_AND_LIMITS.md`](./docs/LEGAL_AND_LIMITS.md) for the boundary of the legal claims. The code is not included today; [`CODE_NOT_INCLUDED.md`](./CODE_NOT_INCLUDED.md) explains when it will open. The review-only [`LICENSE`](./LICENSE) permits reading and cloning for evaluation and does not permit modifying the code.
+Read [`docs/HOW_IT_WORKS.md`](./docs/HOW_IT_WORKS.md), [`docs/EVIDENCE.md`](./docs/EVIDENCE.md), and [`docs/LEGAL_AND_LIMITS.md`](./docs/LEGAL_AND_LIMITS.md) for the agreement, evidence, and limits. The code is not included today; [`CODE_NOT_INCLUDED.md`](./CODE_NOT_INCLUDED.md) explains when it will open. The review-only [`LICENSE`](./LICENSE) permits reading and cloning for evaluation and does not permit modifying the code.
 
 ## Author
 
@@ -144,66 +106,28 @@ Farolero combina un registro de agentes de IA de una organización con una capa 
 
 **Si estás evaluando Find Your Way o Meridian, empieza aquí.**
 
-1. **Qué es.** Un proyecto local para otorgar, acotar, ejercer y comprobar permisos de agentes de IA.
-2. **Qué lo rige.** Lee primero el acuerdo del proyecto expresado en lenguaje claro en [`docs/HOW_IT_WORKS.md`](./docs/HOW_IT_WORKS.md) y compáralo con la implementación cuando se abra el código.
-3. **Qué dice la suite hoy.** [`docs/EVIDENCE.md`](./docs/EVIDENCE.md) enumera las 13 pruebas y el resultado comprobado el 2026-10-03: 8 pasan y 5 fallan porque el pin del kernel no coincide con el kernel 0.1.3 instalado.
-4. **Qué inspeccionar.** Sigue el ejemplo de [`docs/HOW_IT_WORKS.md`](./docs/HOW_IT_WORKS.md) y luego usa los nombres de pruebas y las instrucciones para volver a correrlas en [`docs/EVIDENCE.md`](./docs/EVIDENCE.md) cuando el código esté disponible.
-5. **Qué no está verificado.** La refijación del kernel está pendiente, y un recorrido funcional no equivale a un producto terminado ni listo para desplegar. El proyecto no afirma cumplir ninguna ley.
+1. **Qué es y qué lo rige.** Lee el [alcance y el acuerdo del proyecto](./docs/HOW_IT_WORKS.md#alcance).
+2. **Qué muestra la evidencia.** Consulta los [resultados de la suite y sus límites](./docs/EVIDENCE.md#resultado-de-la-suite-hoy).
+3. **Qué inspeccionar.** Sigue el [recorrido local](./docs/HOW_IT_WORKS.md#recorrido-una-linea-en-un-registro-local) y las [instrucciones para volver a correr las pruebas](./docs/EVIDENCE.md#como-volver-a-correr-las-pruebas-cuando-se-abra-el-codigo) cuando el código esté disponible.
+4. **Qué no está verificado.** Lee los [límites de la evidencia](./docs/EVIDENCE.md#limites-de-esta-evidencia) y los [límites del proyecto](./docs/LEGAL_AND_LIMITS.md#limites-del-proyecto).
 
 ## En un minuto
 
-Imagina una organización ficticia que pide a uno de sus agentes ficticios escribir una línea en un registro local del proyecto. Una persona responsable concede permiso para esa operación, destino, plazo y presupuesto concretos. El agente puede delegar solo un permiso más acotado a otro agente registrado. Si el agente delegado intenta usar otro destino o exceder el presupuesto, Farolero bloquea la acción y devuelve el motivo y un siguiente paso para la persona. Si cabe en el permiso, la acción escribe una línea local y deja un recibo. Un verificador aparte vuelve a leer el almacén y recalcula ese recibo. El ejemplo es local y usa datos de fantasía; no contacta una institución ni una red.
+Para el ejemplo ficticio detallado de un permiso, un efecto local, una devolución bloqueada y una verificación separada, consulta el [recorrido](./docs/HOW_IT_WORKS.md#recorrido-una-linea-en-un-registro-local).
 
 ## Por qué Farolero
 
-| Necesitas | Qué te da | Dónde vive |
-|---|---|---|
-| Un permiso con límites claros | Sujeto, objeto, operación, reloj, presupuesto y destino que deben caber | [`docs/HOW_IT_WORKS.md`](./docs/HOW_IT_WORKS.md) |
-| Delegar sin ampliar autoridad | El delegado recibe solo un subconjunto del permiso de quien delega | [`docs/HOW_IT_WORKS.md`](./docs/HOW_IT_WORKS.md) |
-| Una detención visible cuando algo no cabe | Un bloqueo con su razón y un siguiente paso nombrado para la persona | [`docs/HOW_IT_WORKS.md`](./docs/HOW_IT_WORKS.md) |
-| Un registro que se comprueba por separado | Un verificador recalcula el recibo desde el almacén local | [`docs/HOW_IT_WORKS.md`](./docs/HOW_IT_WORKS.md) |
-| Evidencia de lo que pasó y lo que no | Los 13 nombres de pruebas, el resultado 8 de 13 y el contexto del pin del kernel | [`docs/EVIDENCE.md`](./docs/EVIDENCE.md) |
+Para las reglas de permisos acotados, delegación, bloqueos y comprobación independiente de recibos, lee [cómo funciona Farolero](./docs/HOW_IT_WORKS.md#que-hace-cumplir-el-acuerdo).
 
-**Qué no es.** Farolero no es un sistema de identidad, un directorio pasivo de agentes, un panel de configuración, un producto de cumplimiento legal ni una integración institucional. Este recorrido no usa blockchain, pagos, anclaje en testnet ni conexión de red.
+Consulta los [límites y lo que el proyecto no afirma](./docs/LEGAL_AND_LIMITS.md#lo-que-el-proyecto-no-afirma).
 
 ## Cómo funciona
 
-```
-La persona otorga un permiso acotado
-                 |
-                 v
-El agente registrado actúa dentro de sus límites
-                 |
-                 +---- el delegado recibe solo un subconjunto
-                 |
-                 v
-Comprobación: sujeto, operación, reloj, presupuesto, destino
-       | cabe                                  | no cabe
-       v                                       v
-Un efecto local y reversible              Bloqueo que vuelve a la persona
-       |                                   con razón y siguiente paso humano
-       v
-El recibo queda en el almacén local
-                 |
-                 v
-Un verificador aparte relee el almacén y recalcula el recibo
-```
-
-| Actor | Derechos | Límites |
-|---|---|---|
-| Persona que otorga | Otorgar, delegar, pausar y revocar permisos | En este proyecto es la única autoridad para esas acciones |
-| Agente con permiso | Ejecutar una acción dentro del permiso concedido | No puede salir del sujeto, operación, reloj, presupuesto o destino del permiso |
-| Delegado | Recibir y ejercer un permiso más acotado | No puede transmitir más de lo que recibió |
-| Verificador | Volver a comprobar el efecto y recalcular un recibo desde el almacén | No confía en el informe del ejecutor ni establece una verdad externa |
-| Destino nombrado | Recibir el efecto local descrito en el permiso | Es un destino, no una institución integrada en este recorrido |
-
-El recorrido completo y el sentido cotidiano de cada regla están en [`docs/HOW_IT_WORKS.md`](./docs/HOW_IT_WORKS.md).
+El recorrido completo, los derechos de cada actor y el sentido cotidiano de cada regla están en [`docs/HOW_IT_WORKS.md`](./docs/HOW_IT_WORKS.md).
 
 ## Evidencia que puedes abrir
 
-La captura de fuentes enumera 13 pruebas. Según la comprobación del 2026-10-03, pasan 8 y fallan 5. Una falla es la comprobación explícita del digest del kernel. El proyecto se construyó sobre el commit `54c20c7` del kernel Vespi; cada proyecto fija por digest el kernel que consume y falla deliberadamente cuando ese kernel cambia. Contra el kernel 0.1.3 instalado, parte de esta suite falla hasta actualizar el pin y volver a comprobarlo. Esa refijación está pendiente. La salida también muestra cuatro comprobaciones de conducta que devuelven bloqueado donde se esperaba verificado, o no encuentran la línea del efecto local. Hay que volver a correrlas con el pin alineado para saber si pasan contra el kernel registrado. Un recorrido que funcionó contra `54c20c7` no es un producto terminado ni prueba que esté listo para usarse.
-
-Antes del código, la fase RED adversarial escribió ocho casos y observó fallar cada uno. El acuerdo establece las reglas que debían proteger, y la suite actual nombra pruebas sobre alcance del permiso, delegación, límites de tiempo y destino, presupuesto, repetición de efectos, integridad del recibo, verificación independiente, autoridad para pausar, retorno bloqueado y registro local legible. Las fuentes suministradas no relacionan uno por uno los ocho casos RED originales con estos nombres de pruebas actuales. [`docs/EVIDENCE.md`](./docs/EVIDENCE.md) explica qué demuestran los resultados disponibles y qué no, y cómo correr la suite cuando se abra el código. No hay transacciones de testnet que revisar porque este proyecto no usa blockchain ni testnet.
+El [registro de evidencia](./docs/EVIDENCE.md) presenta los resultados con nombre, el contexto del pin del kernel, los límites de los casos adversariales originales y las instrucciones para volver a correr la suite cuando se abra el código. También explica por qué no hay transacciones de testnet que revisar.
 
 ## Farolero, Vespi y Lore Plugin
 
@@ -211,11 +135,11 @@ Antes del código, la fase RED adversarial escribió ocho casos y observó falla
 
 ## Lo que no hace y lo que no está verificado
 
-Todos los registros y actores de ejemplo son de fantasía. No hay datos personales, de salud, financieros ni de terceros reales. Los efectos son locales y reversibles. El proyecto no envía registros a una red, no opera blockchain, no hace pagos, no ancla en testnet ni se integra con una institución. No afirma cumplir ninguna ley. Según la comprobación del 2026-10-03, la suite está 8 de 13 porque el kernel fijado difiere del 0.1.3 instalado; la refijación está pendiente. Los nueve proyectos con código se construyeron el 2026-09-29 contra el corte `54c20c7`, y sus registros reportan verde contra ese corte. Esos registros muestran un camino que funcionó en ese contexto, no un producto terminado ni listo para usarse. Consulta [`docs/LEGAL_AND_LIMITS.md`](./docs/LEGAL_AND_LIMITS.md) y [`docs/EVIDENCE.md`](./docs/EVIDENCE.md).
+Los [límites del proyecto](./docs/LEGAL_AND_LIMITS.md#limites-del-proyecto) y los [límites de la evidencia](./docs/EVIDENCE.md#limites-de-esta-evidencia) describen los datos ficticios, los efectos locales y reversibles, las conductas no verificadas, la refijación pendiente y lo que el proyecto no afirma.
 
 ## Cómo revisar este proyecto
 
-Empieza por la explicación en lenguaje claro del acuerdo en [`docs/HOW_IT_WORKS.md`](./docs/HOW_IT_WORKS.md). Después lee [`docs/EVIDENCE.md`](./docs/EVIDENCE.md) para ver los nombres de pruebas, el resultado actual de 8 de 13 y cómo volver a correrlas cuando se abra el código. Consulta [`docs/LEGAL_AND_LIMITS.md`](./docs/LEGAL_AND_LIMITS.md) para conocer los límites de las afirmaciones legales. Hoy no se incluye el código; [`CODE_NOT_INCLUDED.md`](./CODE_NOT_INCLUDED.md) explica cuándo se abrirá. La [`LICENSE`](./LICENSE) de solo revisión permite leer y clonar para evaluar, no modificar el código.
+Lee [`docs/HOW_IT_WORKS.md`](./docs/HOW_IT_WORKS.md), [`docs/EVIDENCE.md`](./docs/EVIDENCE.md) y [`docs/LEGAL_AND_LIMITS.md`](./docs/LEGAL_AND_LIMITS.md) para consultar el acuerdo, la evidencia y los límites. Hoy no se incluye el código; [`CODE_NOT_INCLUDED.md`](./CODE_NOT_INCLUDED.md) explica cuándo se abrirá. La [`LICENSE`](./LICENSE) de solo revisión permite leer y clonar para evaluar, no modificar el código.
 
 ## Autoría
 

@@ -6,7 +6,7 @@ The supplied project snapshot contains `suite-hoy.txt`, the agreement, and the p
 
 ## Today's suite result
 
-The command recorded in the package manifest is `npm test`, which runs `node --test "test/*.test.js"`. The output checked on 2026-10-03 reports 13 tests: 8 pass and 5 fail. The names below are copied from `suite-hoy.txt`; status is from that output.
+The captured output checked on 2026-10-03 reports 13 tests: 8 pass and 5 fail. The names below are copied from `suite-hoy.txt`; status is from that output.
 
 ### Permission boundaries and authority
 
@@ -65,9 +65,11 @@ The output is one captured suite result. It does not establish behavior for ever
 
 La captura suministrada del proyecto contiene `suite-hoy.txt`, el acuerdo y el registro de fases. No contiene evidencia pública de transacciones ni una corrida en testnet. El acuerdo dice que los efectos son locales y reversibles, que todos los datos son sintéticos y que no hay blockchain, pagos, red ni integración institucional.
 
+<a id="resultado-de-la-suite-hoy"></a>
+
 ### Resultado de la suite hoy
 
-El comando registrado en el manifiesto es `npm test`, que ejecuta `node --test "test/*.test.js"`. La salida comprobada el 2026-10-03 informa 13 pruebas: 8 pasan y 5 fallan. Los nombres siguientes se copian de `suite-hoy.txt`; el resultado corresponde a esa salida.
+La salida capturada y comprobada el 2026-10-03 informa 13 pruebas: 8 pasan y 5 fallan. Los nombres siguientes se copian de `suite-hoy.txt`; el resultado corresponde a esa salida.
 
 #### Límites del permiso y autoridad
 
@@ -110,11 +112,15 @@ El proyecto se construyó sobre el corte `54c20c7` del kernel Vespi y los proyec
 
 `FASES.md` registra que los ocho casos RED del proyecto se escribieron antes del código y que se observó fallar cada uno. El acuerdo establece reglas sobre autoridad ausente o vencida, límites de destino y presupuesto, delegación que reduce el permiso, efectos repetidos, integridad del recibo, verificación separada de la ejecución, quién puede pausar, acciones bloqueadas que vuelven a una persona y un registro local legible. La captura no relaciona uno por uno los casos RED originales con los nombres actuales de la suite. Son comprobaciones adversariales del proyecto, no hallazgos de una auditoría externa. La salida de la suite nombrada es la evidencia disponible aquí; la captura no incluye un informe separado de una persona revisora independiente.
 
+<a id="como-volver-a-correr-las-pruebas-cuando-se-abra-el-codigo"></a>
+
 ### Cómo volver a correr las pruebas cuando se abra el código
 
 Cuando se publique el código fuente, primero revisa el digest fijado del kernel y las versiones exactas de dependencias. Después de registrar la refijación pendiente, ejecuta `npm test` desde la raíz del repositorio en una sesión nueva. Compara el resultado con los 13 nombres y la base actual de 8 de 13. Revisa cada resultado que cambie y los recibos antes de describir la suite como verde. El manifiesto también registra `npm run recorrido` para el recorrido local. Estos comandos constan en el `package.json` suministrado; esta revisión no los ejecutó porque no se incluye el código fuente.
 
 No hay hashes de transacciones de testnet que abrir o revisar. El acuerdo dice explícitamente que Farolero no usa blockchain ni anclaje en testnet.
+
+<a id="limites-de-esta-evidencia"></a>
 
 ### Límites de esta evidencia
 
