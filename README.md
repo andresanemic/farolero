@@ -3,11 +3,12 @@
 # Farolero
 
 <p align="center">
-  <a href="#english"><img src="https://img.shields.io/badge/status-kernel_refix_pending-D7B698?style=for-the-badge&labelColor=07111A" alt="Status: kernel refix pending"></a>
+  <a href="#english"><img src="https://img.shields.io/badge/status-kernel_0.1.5_target-D7B698?style=for-the-badge&labelColor=07111A" alt="Status: kernel 0.1.5 target"></a>
   <a href="./LICENSE"><img src="https://img.shields.io/badge/license-review--only-D7B698?style=for-the-badge&labelColor=07111A" alt="License: review only"></a>
   <a href="./docs/EVIDENCE.md"><img src="https://img.shields.io/badge/suite-8_of_13-E0C170?style=for-the-badge&labelColor=07111A" alt="Suite: 8 of 13 tests pass today"></a>
   <a href="./docs/HOW_IT_WORKS.md"><img src="https://img.shields.io/badge/agreement-written_before_code-D7B698?style=for-the-badge&labelColor=07111A" alt="Agreement written before code"></a>
   <a href="https://github.com/andresanemic/vespi"><img src="https://img.shields.io/badge/built_with-Vespi_%C2%B7_Lore_Plugin-E0C170?style=for-the-badge&labelColor=07111A" alt="Built with Vespi and Lore Plugin"></a>
+  <a href="https://github.com/andresanemic/vespi/tree/ed559e83c976dd6e6a379a5510db776206f670b4"><img src="https://img.shields.io/badge/kernel-0.1.5_candidate-ed559e8?style=for-the-badge&labelColor=07111A&color=E0C170" alt="Kernel: 0.1.5 candidate (commit ed559e8)"></a>
 </p>
 
 <p align="center"><b>Farolero is a project for making an AI agent’s authority visible before it acts.</b><br>Its agreement defines what a person grants, where delegation stops, and how the local record should be checked.</p>
@@ -119,7 +120,7 @@ Farolero is not a passive directory, an identity system, a configuration dashboa
 
 The captured suite dated 2026-10-03 reports 13 tests: 8 pass and 5 fail. It covers permission boundaries, delegation, expiry, pausing authority, blocked returns, receipt tampering, verification, repeated effects, budget limits, and a readable local record. The current capture shows passing checks for absent permission, expiry, destination mismatch, narrowing delegation, pausing authority, blocked reasons, hand-edited receipt detection, and matching commit declarations in the five module headers.
 
-One failing check directly identifies the reason the snapshot is out of step: the consumed kernel’s digest in `continuity.js` differs from the project’s recorded pin. Farolero was built against Vespi kernel cut `54c20c7`; the installed kernel was 0.1.3 when checked on 2026-10-03. The project pins the kernel by digest module by module, so a changed kernel is meant to fail that check until the pin is reviewed and fixed. That refix is pending. Four other checks currently return `blocked` where verification was expected or fail to find the local effect line. They also ran against the moved kernel; they need a fresh run after the pin is aligned before anyone can tell whether those behaviors pass in the recorded context.
+One failing check directly identifies the reason the snapshot is out of step: the consumed kernel's digest in `continuity.js` differs from the project's recorded pin. Farolero was built against Vespi kernel cut `54c20c7`; the installed kernel was 0.1.3 when checked on 2026-10-03. The project pins the kernel by digest module by module, so a changed kernel is meant to fail that check until the pin is reviewed and fixed. That refix is pending: Farolero now targets kernel **0.1.5 candidate** (commit `ed559e8`); the re-pinned digest table will be committed once the kernel release is confirmed. Four other checks currently return `blocked` where verification was expected or fail to find the local effect line. They also ran against the moved kernel; they need a fresh run after the pin is aligned before anyone can tell whether those behaviors pass in the recorded context.
 
 The adversarial phase wrote eight project RED cases before code and observed each fail. The available sources do not map those original cases one by one to the current test names. These are project checks, not an external audit. Read [Evidence](./docs/EVIDENCE.md) for the names, phase record, and rerun instructions.
 
