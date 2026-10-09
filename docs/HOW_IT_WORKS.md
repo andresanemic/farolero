@@ -47,15 +47,15 @@ These are the rules in the agreement, not a claim that every rule currently pass
 
 The example does not show a real institution, real data, a real external destination, or a production deployment. A local receipt cannot establish an agent’s real-world identity, the truth of an input, a person’s legal authority, or legal compliance. There is no network transaction, blockchain anchor, payment, or testnet record in this project run.
 
-## Español
+# Español
 
-### Alcance
+## Alcance
 
 Farolero combina el registro de agentes de IA de una organización con una capa de autoridad otorgada por una persona responsable. El permiso es relacional: indica quién puede actuar, sobre qué sujeto, para qué operación, durante cuánto tiempo, hasta qué presupuesto y hacia qué destino. El recorrido acordado usa datos de fantasía y un efecto local y reversible en un archivo. No tiene integración institucional, de red, blockchain, pagos ni testnet.
 
 El acuerdo se escribió antes del código. Define los límites del proyecto y las conductas que la implementación busca volver visibles: la autoridad pertenece a una persona, delegar la reduce, lo que queda fuera vuelve a una persona y un verificador comprueba el efecto local por separado. El registro actual de pruebas se presenta en [`EVIDENCE.md`](EVIDENCE.md).
 
-### Actores y derechos
+## Actores y derechos
 
 | Actor | Qué puede hacer | Límite |
 |---|---|---|
@@ -65,7 +65,7 @@ El acuerdo se escribió antes del código. Define los límites del proyecto y la
 | Verificador | Volver a leer el almacén local y recalcular el recibo | Está separado de la ejecución; no depende del informe del ejecutor |
 | Destino nombrado | Recibir el efecto descrito en el permiso | Es un destino nombrado, no una institución integrada en este recorrido |
 
-### Recorrido: una entrada en un registro local
+## Recorrido: una entrada en un registro local
 
 El caso siguiente es ficticio y explicativo. La captura pública de evidencia no incluye la salida del comando de recorrido, así que esta es una descripción de las reglas acordadas, no la transcripción de una corrida.
 
@@ -77,7 +77,7 @@ Antes del efecto, Farolero comprueba los límites del permiso. Un permiso vencid
 
 La operación debe dejar un recibo que describa la solicitud, el permiso que aplicó o la razón por la que no, el efecto, quién actuó, la comprobación del verificador y un digest del contenido. Un verificador aparte vuelve a leer el almacén local y recalcula el recibo; no acepta el informe del ejecutor como prueba. Si se intenta repetir un efecto con la misma clave, la regla del proyecto es devolver el primer recibo sin volver a tocar el destino. Las reglas y los resultados actuales de las pruebas no son lo mismo: [`EVIDENCE.md`](EVIDENCE.md) presenta los resultados y fallos capturados.
 
-### Qué hace cumplir el acuerdo
+## Qué hace cumplir el acuerdo
 
 - **El permiso es relacional.** Sujeto, operación, plazo, presupuesto y destino forman parte de la concesión y se comprueban por separado.
 - **Delegar solo reduce.** El delegado recibe un subconjunto de la autoridad otorgada, nunca una versión ampliada.
@@ -92,6 +92,6 @@ La operación debe dejar un recibo que describa la solicitud, el permiso que apl
 
 Estas son reglas del acuerdo, no una afirmación de que todas pasen hoy. Consulta [`EVIDENCE.md`](EVIDENCE.md) para ver la captura.
 
-### Qué no muestra este recorrido
+## Qué no muestra este recorrido
 
 El ejemplo no muestra una institución real, datos reales, un destino externo ni un despliegue de producción. Un recibo local no establece la identidad real de un agente, la verdad de una entrada, la autoridad jurídica de una persona ni el cumplimiento legal. En este recorrido no hay transacción de red, anclaje en blockchain, pago ni registro de testnet.

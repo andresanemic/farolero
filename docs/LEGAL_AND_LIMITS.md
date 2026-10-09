@@ -29,15 +29,15 @@ These limits apply to the project run described by the supplied agreement and ev
 
 These are open questions. This repository does not answer them as legal conclusions.
 
-## Español
+# Español
 
-### Ley citada en el acuerdo
+## Ley citada en el acuerdo
 
 El acuerdo del proyecto cita la Ley 21.719 de Chile como ejemplo del tipo de exigencia que una organización podría tener que abordar cuando necesita mostrar quién accedió a información, con qué permiso y para qué. El acuerdo dice que durante este proyecto no se leyó el texto legal primario ni se comprobó la implementación frente a esa ley. También dice expresamente que Farolero no cumple esa ley ni ninguna otra. La norma da contexto al problema; este repositorio no afirma cumplimiento ni ofrece una interpretación legal.
 
 Ningún profesional del derecho ha revisado los materiales del proyecto. Este documento no es asesoría legal ni presenta una opinión jurídica.
 
-### Lo que el proyecto no afirma
+## Lo que el proyecto no afirma
 
 - No afirma cumplir la Ley 21.719 ni ninguna otra ley o norma.
 - No afirma que un recibo local establezca identidad legal, autoridad de una persona, verdad de una entrada o admisibilidad jurídica.
@@ -45,13 +45,13 @@ Ningún profesional del derecho ha revisado los materiales del proyecto. Este do
 - No afirma que el sistema sea un producto terminado o esté listo para usarse.
 - En este recorrido no procesa datos personales, de salud, financieros ni de terceros reales. Todos los datos de ejemplo y agentes son de fantasía.
 
-### Límites del proyecto
+## Límites del proyecto
 
 El efecto descrito es escribir de forma local y reversible en un archivo del proyecto. No hay red, blockchain, pagos, anclaje en testnet ni integración institucional activa. Farolero consume el kernel Vespi y no lo modifica. Hoy este repositorio público no incluye el código fuente. El resultado capturado de la suite y la actualización del pin del kernel se describen en [`EVIDENCE.md`](EVIDENCE.md).
 
 Estos límites corresponden al recorrido del proyecto descrito por el acuerdo y la evidencia suministrados. No establecen qué haría una implementación o un despliegue futuro.
 
-### Preguntas abiertas
+## Preguntas abiertas
 
 - ¿Qué requisitos jurídicos y organizacionales aplicarían a un despliegue real y a sus datos?
 - ¿Qué evidencia necesitaría una organización responsable antes de conceder autoridad a un agente sobre un sistema real?
