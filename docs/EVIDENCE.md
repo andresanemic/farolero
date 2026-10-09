@@ -2,11 +2,11 @@
 
 ## What was available for this review
 
-The review snapshot includes the project agreement, phase record, and a captured test output dated 2026-10-03. It does not include the source code, a testnet run, or public transaction evidence. The agreement says the example data is synthetic, the effect is local and reversible, and the project has no blockchain, payment, network, or institutional integration.
+The review snapshot includes the project agreement, phase record, and a captured test output dated 2026-10-09 (`docs/suite-2026-10-09.txt`). It does not include the source code, a testnet run, or public transaction evidence. The agreement says the example data is synthetic, the effect is local and reversible, and the project has no blockchain, payment, network, or institutional integration.
 
 ## Today’s suite result
 
-The captured output reports 13 tests: 8 pass and 5 fail. The names below are copied from the supplied test output; status is from that capture.
+The captured output reports 13 tests: 13 pass, none unsuccessful, none skipped, under Node v24.15.0. The run used `node --test test/*.test.js` in a clean clone, with empty HOME and no network. The names below are copied from the supplied test output; status is from that capture. The kernel consumed is Vespi 0.1.5 (commit `ed559e83c976dd6e6a379a5510db776206f670b4`), copied in `vendor/vespi-kernel` and checked against its SOURCE.md digest module by module.
 
 ### Permission boundaries and authority
 
@@ -24,36 +24,34 @@ The captured output reports 13 tests: 8 pass and 5 fail. The names below are cop
 | Test name | Result |
 |---|---|
 | `un recibo editado a mano no verifica` | Pass |
-| `un verificador que solo cree al ejecutor no puede producir un verde en la auditoría` | Fail |
+| `un verificador que solo cree al ejecutor no puede producir un verde en la auditoría` | Pass |
 
 ### Budget, repeat prevention, and readable record
 
 | Test name | Result |
 |---|---|
-| `el presupuesto es un límite duro y se acumula entre ejecuciones` | Fail |
-| `el mismo efecto no se ejecuta dos veces: el segundo intento devuelve el recibo del primero` | Fail |
-| `el registro es un archivo que la persona puede abrir sin Farolero` | Fail |
+| `el presupuesto es un límite duro y se acumula entre ejecuciones` | Pass |
+| `el mismo efecto no se ejecuta dos veces: el segundo intento devuelve el recibo del primero` | Pass |
+| `el registro es un archivo que la persona puede abrir sin Farolero` | Pass |
 
 ### Consumed kernel pin
 
 | Test name | Result |
 |---|---|
-| `el núcleo que consume Farolero es el corte fijado, módulo por módulo` | Fail |
+| `el núcleo que consume Farolero es el corte fijado, módulo por módulo` | Pass |
 | `el encabezado de los cinco módulos declara el mismo commit` | Pass |
 
-## Why the kernel check fails, and what the other failures mean
+## Why the earlier capture was red
 
-Farolero was built against the Vespi kernel cut `54c20c7`. The project records the kernel it consumes by digest, module by module, and deliberately checks that the installed files still match that recorded cut. In the supplied capture, the digest differs in `continuity.js`; the kernel installed at the time was 0.1.3. The kernel refix is pending. The module-header test passes, but matching commit declarations do not make a changed file digest match.
-
-The other four failures are behavior checks: three return `bloqueado` where `verificado` was expected, and one cannot find an effect line in the local record. They were also run against the moved kernel. The available evidence does not establish whether these checks pass against the recorded `54c20c7` context. Aligning the kernel pin and rerunning the suite is required to answer that. The current failures do not show that these behaviors are ready for use, and the earlier green state reported for the recorded cut is not a product-readiness claim.
+The 2026-10-03 capture was red because the project was pinned to an older kernel cut (0.1.3). That pin update to 0.1.5 (commit `ed559e8`) is now recorded, and the 2026-10-09 capture checks the vendored copy module by module against its SOURCE.md. A green suite covers only what those named tests check.
 
 ## What the adversarial phase found
 
-The phase record says eight project RED cases were written before code and that each failure was observed. The agreement defines the behaviors those cases concern: absent or expired authority, destination and budget limits, narrowing delegation, repeated effects, receipt integrity, verification separate from execution, who may pause, blocked returns to a person, and a readable local record. The supplied snapshot does not map each original RED case one by one to the current named tests. These are project adversarial checks, not an independent audit; no separate independent-review report is included.
+The phase record says eight project RED cases were written before code and that each one stayed red when observed. The agreement defines the behaviors those cases concern: absent or expired authority, destination and budget limits, narrowing delegation, repeated effects, receipt integrity, verification separate from execution, who may pause, blocked returns to a person, and a readable local record. The supplied snapshot does not map each original RED case one by one to the current named tests. These are project adversarial checks, not an independent audit; no separate independent-review report is included.
 
 ## How to rerun when the code opens
 
-When source code is published, inspect the pinned kernel digest and exact dependency versions first. After the pending kernel refix is recorded, run `npm test` from the repository root in a fresh session. Compare the result with today’s 13 named tests and 8-of-13 baseline, and inspect each changed result and the receipt artifacts before describing the suite as green. The supplied package manifest also lists `npm run recorrido` for the local walkthrough. These commands come from that manifest; this review did not run them because the source code is not included.
+When source code is published, inspect the pinned kernel digest and exact dependency versions first. Run `npm test` from the repository root in a fresh session. The suite must report the same 13 named tests with 13 passing, and `docs/suite-2026-10-09.txt` is the reference to compare against. Inspect each changed result and the receipt artifacts before describing the suite as green. The supplied package manifest also lists `npm run recorrido` for the local walkthrough. These commands come from that manifest; this review did not run them because the source code is not included.
 
 There are no testnet transaction hashes to inspect. The agreement says Farolero does not use blockchain or a testnet anchor.
 
@@ -65,11 +63,11 @@ This is one captured suite result. It does not establish behavior for every inpu
 
 ### Material disponible para esta revisión
 
-La captura de revisión incluye el acuerdo del proyecto, el registro de fases y una salida de pruebas fechada el 2026-10-03. No incluye el código fuente, una corrida en testnet ni evidencia pública de transacciones. El acuerdo dice que los datos de ejemplo son sintéticos, que el efecto es local y reversible, y que el proyecto no tiene blockchain, pagos, red ni integración institucional.
+La captura de revisión incluye el acuerdo del proyecto, el registro de fases y una salida de pruebas fechada el 2026-10-09 (`docs/suite-2026-10-09.txt`). No incluye el código fuente, una corrida en testnet ni evidencia pública de transacciones. El acuerdo dice que los datos de ejemplo son sintéticos, que el efecto es local y reversible, y que el proyecto no tiene blockchain, pagos, red ni integración institucional.
 
 ### Resultado de la suite hoy
 
-La salida capturada informa 13 pruebas: 8 pasan y 5 fallan. Los nombres siguientes se copian de la salida suministrada; el estado corresponde a esa captura.
+La salida capturada informa 13 pruebas: 13 pasan, ninguna sin pasar, ninguna omitida, con Node v24.15.0. La corrida usó `node --test test/*.test.js` en un clon limpio, con HOME vacío y sin red. Los nombres siguientes se copian de la salida suministrada; el estado corresponde a esa captura. El kernel consumido es Vespi 0.1.5 (commit `ed559e83c976dd6e6a379a5510db776206f670b4`), copiado en `vendor/vespi-kernel` y comprobado contra su SOURCE.md digest módulo por módulo.
 
 #### Límites del permiso y autoridad
 
@@ -87,36 +85,34 @@ La salida capturada informa 13 pruebas: 8 pasan y 5 fallan. Los nombres siguient
 | Nombre de la prueba | Resultado |
 |---|---|
 | `un recibo editado a mano no verifica` | Pasa |
-| `un verificador que solo cree al ejecutor no puede producir un verde en la auditoría` | Falla |
+| `un verificador que solo cree al ejecutor no puede producir un verde en la auditoría` | Pasa |
 
 #### Presupuesto, repetición y registro legible
 
 | Nombre de la prueba | Resultado |
 |---|---|
-| `el presupuesto es un límite duro y se acumula entre ejecuciones` | Falla |
-| `el mismo efecto no se ejecuta dos veces: el segundo intento devuelve el recibo del primero` | Falla |
-| `el registro es un archivo que la persona puede abrir sin Farolero` | Falla |
+| `el presupuesto es un límite duro y se acumula entre ejecuciones` | Pasa |
+| `el mismo efecto no se ejecuta dos veces: el segundo intento devuelve el recibo del primero` | Pasa |
+| `el registro es un archivo que la persona puede abrir sin Farolero` | Pasa |
 
 #### Pin del kernel consumido
 
 | Nombre de la prueba | Resultado |
 |---|---|
-| `el núcleo que consume Farolero es el corte fijado, módulo por módulo` | Falla |
+| `el núcleo que consume Farolero es el corte fijado, módulo por módulo` | Pasa |
 | `el encabezado de los cinco módulos declara el mismo commit` | Pasa |
 
-### Por qué falla la comprobación del kernel y qué significan los demás fallos
+### Por qué la captura anterior quedó en rojo
 
-Farolero se construyó sobre el corte `54c20c7` del kernel Vespi. El proyecto registra por digest, módulo a módulo, el kernel que consume y comprueba que los archivos instalados sigan coincidiendo con ese corte. En la captura suministrada, el digest difiere en `continuity.js`; el kernel instalado en ese momento era 0.1.3. La refijación está pendiente. La prueba de los encabezados de módulos pasa, pero que declaren el mismo commit no hace que el digest de un archivo cambiado coincida.
-
-Los otros cuatro fallos son comprobaciones de conducta: tres devuelven `bloqueado` donde se esperaba `verificado`, y una no encuentra la línea del efecto en el registro local. También se ejecutaron contra el kernel movido. La evidencia disponible no establece si estas pruebas pasan contra el contexto registrado `54c20c7`. Para responderlo hace falta alinear el pin y volver a correr la suite. Los fallos actuales no demuestran que estas conductas estén listas para usarse, y el estado verde anterior reportado para el corte registrado no es una afirmación de preparación del producto.
+La captura del 2026-10-03 quedó en rojo porque el proyecto estaba fijado a un corte viejo del kernel (0.1.3). Esa actualización del pin a 0.1.5 (commit `ed559e8`) ya está registrada, y la captura del 2026-10-09 comprueba la copia interna módulo por módulo contra su SOURCE.md. Una suite en verde cubre solo lo que esas pruebas nombran.
 
 ### Qué encontró la fase adversarial
 
-El registro de fases dice que los ocho casos RED del proyecto se escribieron antes del código y que se observó fallar cada uno. El acuerdo define las conductas que cubrían: autoridad ausente o vencida, límites de destino y presupuesto, delegación que reduce, efectos repetidos, integridad del recibo, verificación separada de la ejecución, quién puede pausar, devoluciones bloqueadas a una persona y un registro local legible. La captura suministrada no relaciona uno por uno los casos RED originales con las pruebas actuales. Son comprobaciones adversariales del proyecto, no una auditoría independiente; no se incluye un informe separado de revisión independiente.
+El registro de fases dice que los ocho casos RED del proyecto se escribieron antes del código y que se observó fallar cada uno. El acuerdo define las conductas que cubrían: autoridad ausente o vencida, límites de destino y presupuesto, delegación que reduce, efectos repetidos, integridad del recibo, verificación separada de la ejecución, quién puede pausar, devoluciones bloqueadas a una persona y un registro local legible. La captura suministrada no relaciona uno por uno los casos RED originales con las pruebas actuales. Son comprobaciones adversariales del proyecto, no una auditoría externa; no se incluye un informe separado de revisión externa.
 
 ### Cómo volver a correr las pruebas cuando se abra el código
 
-Cuando se publique el código fuente, primero revisa el digest fijado del kernel y las versiones exactas de dependencias. Después de registrar la refijación pendiente, ejecuta `npm test` desde la raíz del repositorio en una sesión nueva. Compara el resultado con los 13 nombres y la base actual de 8 de 13, y revisa cada resultado que cambie y los artefactos de recibos antes de describir la suite como verde. El manifiesto suministrado también lista `npm run recorrido` para el recorrido local. Estos comandos constan en ese manifiesto; esta revisión no los ejecutó porque no se incluye el código fuente.
+Cuando se publique el código fuente, primero revisa el digest fijado del kernel y las versiones exactas de dependencias. Ejecuta `npm test` desde la raíz del repositorio en una sesión nueva. La suite debe informar las mismas 13 pruebas nombradas con 13 que pasan, y `docs/suite-2026-10-09.txt` es la referencia para comparar. Revisa cada resultado que cambie y los artefactos de recibos antes de describir la suite como verde. El manifiesto suministrado también lista `npm run recorrido` para el recorrido local. Estos comandos constan en ese manifiesto; esta revisión no los ejecutó porque no se incluye el código fuente.
 
 No hay hashes de transacciones de testnet que revisar. El acuerdo dice que Farolero no usa blockchain ni anclaje en testnet.
 

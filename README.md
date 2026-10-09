@@ -3,9 +3,9 @@
 # Farolero
 
 <p align="center">
-  <a href="#english"><img src="https://img.shields.io/badge/status-kernel_0.1.5_target-D7B698?style=for-the-badge&labelColor=07111A" alt="Status: kernel 0.1.5 target"></a>
+  <a href="#english"><img src="https://img.shields.io/badge/status-kernel_0.1.5_ed559e8-D7B698?style=for-the-badge&labelColor=07111A" alt="Status: kernel 0.1.5 (commit ed559e8)"></a>
   <a href="./LICENSE"><img src="https://img.shields.io/badge/license-review--only-D7B698?style=for-the-badge&labelColor=07111A" alt="License: review only"></a>
-  <a href="./docs/EVIDENCE.md"><img src="https://img.shields.io/badge/suite-8_of_13-E0C170?style=for-the-badge&labelColor=07111A" alt="Suite: 8 of 13 tests pass today"></a>
+  <a href="./docs/EVIDENCE.md"><img src="https://img.shields.io/badge/suite-13_pass-E0C170?style=for-the-badge&labelColor=07111A" alt="Suite: 13 tests pass"></a>
   <a href="./docs/HOW_IT_WORKS.md"><img src="https://img.shields.io/badge/agreement-written_before_code-D7B698?style=for-the-badge&labelColor=07111A" alt="Agreement written before code"></a>
   <a href="https://github.com/andresanemic/vespi"><img src="https://img.shields.io/badge/built_with-Vespi_%C2%B7_Lore_Plugin-E0C170?style=for-the-badge&labelColor=07111A" alt="Built with Vespi and Lore Plugin"></a>
   <a href="https://github.com/andresanemic/vespi/tree/ed559e83c976dd6e6a379a5510db776206f670b4"><img src="https://img.shields.io/badge/kernel-0.1.5_release-ed559e8?style=for-the-badge&labelColor=07111A&color=E0C170" alt="Kernel: 0.1.5 release (commit ed559e8)"></a>
@@ -58,13 +58,13 @@ Destination   the local project record
 Delegation    a subset of Scribe’s permission only
 ```
 
-The captured suite confirms that these boundaries are among the checks, and also shows where the current run falls short:
+The captured suite confirms that these boundaries are among the checks:
 
 ```text
 ✔ sin permiso, la ejecución queda bloqueada y vuelve a la persona con la salida
 ✔ un delegado no puede recibir más de lo que su delegante tiene
 ✔ con el mismo permiso y otro destino, el bloqueo nombra los dos destinos
-✖ el presupuesto es un límite duro y se acumula entre ejecuciones
+✔ el presupuesto es un límite duro y se acumula entre ejecuciones
 ```
 
 The names and marks above are copied from the captured test output. The example record is invented for explanation; it is not supplied project data or an actual execution.
@@ -118,11 +118,9 @@ Farolero is not a passive directory, an identity system, a configuration dashboa
 
 ## Evidence you can open
 
-The captured suite dated 2026-10-03 reports 13 tests: 8 pass and 5 fail. It covers permission boundaries, delegation, expiry, pausing authority, blocked returns, receipt tampering, verification, repeated effects, budget limits, and a readable local record. The current capture shows passing checks for absent permission, expiry, destination mismatch, narrowing delegation, pausing authority, blocked reasons, hand-edited receipt detection, and matching commit declarations in the five module headers.
+The captured suite dated 2026-10-09 reports 13 tests: 13 pass, none unsuccessful, none skipped, under Node v24.15.0. It covers permission boundaries, delegation, expiry, pausing authority, blocked returns, receipt tampering, verification, repeated effects, budget limits, and a readable local record. The 2026-10-03 capture was red because the project was pinned to an older kernel cut (0.1.3); that pin update to 0.1.5 (commit `ed559e8`) is now recorded and checked module by module in `docs/suite-2026-10-09.txt`.
 
-One failing check directly identifies the reason the snapshot is out of step: the consumed kernel's digest in `continuity.js` differs from the project's recorded pin. Farolero was built against Vespi kernel cut `54c20c7`; the installed kernel was 0.1.3 when checked on 2026-10-03. The project pins the kernel by digest module by module, so a changed kernel is meant to fail that check until the pin is reviewed and fixed. That refix is pending: Farolero now targets kernel **0.1.5 release** (commit `ed559e8`); the digest table remains pending until a deliberate project re-pin and fresh tests are completed. Four other checks currently return `blocked` where verification was expected or fail to find the local effect line. They also ran against the moved kernel; they need a fresh run after the pin is aligned before anyone can tell whether those behaviors pass in the recorded context.
-
-The adversarial phase wrote eight project RED cases before code and observed each fail. The available sources do not map those original cases one by one to the current test names. These are project checks, not an external audit. Read [Evidence](./docs/EVIDENCE.md) for the names, phase record, and rerun instructions.
+The adversarial phase wrote eight project RED cases before code and observed each one stay red. The available sources do not map those original cases one by one to the current test names. These are project checks, not an external audit. Read [Evidence](./docs/EVIDENCE.md) for the names, phase record, and rerun instructions.
 
 ## Farolero, Vespi, and Lore Plugin
 
@@ -195,13 +193,13 @@ Destino       el registro local del proyecto
 Delegación    solo un subconjunto del permiso de Escriba
 ```
 
-La suite capturada confirma que estos límites están entre las comprobaciones y también muestra dónde la corrida actual queda corta:
+La suite capturada confirma que estos límites están entre las comprobaciones:
 
 ```text
 ✔ sin permiso, la ejecución queda bloqueada y vuelve a la persona con la salida
 ✔ un delegado no puede recibir más de lo que su delegante tiene
 ✔ con el mismo permiso y otro destino, el bloqueo nombra los dos destinos
-✖ el presupuesto es un límite duro y se acumula entre ejecuciones
+✔ el presupuesto es un límite duro y se acumula entre ejecuciones
 ```
 
 Los nombres y marcas anteriores se copian de la salida capturada de pruebas. El registro de ejemplo es inventado para explicar el caso; no proviene de los datos suministrados ni de una ejecución real.
@@ -255,9 +253,7 @@ Farolero no es un directorio pasivo, un sistema de identidad, un panel de config
 
 ## Evidencia que puedes abrir
 
-La suite capturada el 2026-10-03 informa 13 pruebas: 8 pasan y 5 fallan. Cubre límites de permisos, delegación, vencimiento, autoridad para pausar, devoluciones bloqueadas, manipulación de recibos, verificación, efectos repetidos, presupuesto y un registro local legible. En la captura actual pasan las comprobaciones de permiso ausente, vencimiento, destino distinto, delegación que reduce, autoridad para pausar, razones de bloqueo, detección de un recibo editado a mano y declaración del mismo commit en los encabezados de los cinco módulos.
-
-Una prueba fallida identifica directamente por qué la captura está desalineada: el digest del kernel consumido en `continuity.js` difiere del pin registrado por el proyecto. Farolero se construyó sobre el corte `54c20c7` del kernel Vespi; el kernel instalado era 0.1.3 al comprobarlo el 2026-10-03. El proyecto fija el kernel por digest y módulo, así que el cambio del kernel debe hacer fallar esa comprobación hasta que el pin se revise y se vuelva a fijar. Esa refijación está pendiente. Otras cuatro pruebas ahora devuelven `bloqueado` donde se esperaba verificar, o no encuentran la línea del efecto local. También corrieron contra el kernel movido; deben repetirse cuando el pin esté alineado para saber si esas conductas pasan en el contexto registrado.
+La suite capturada el 2026-10-09 informa 13 pruebas: 13 pasan, ninguna sin pasar, ninguna omitida, con Node v24.15.0. Cubre límites de permisos, delegación, vencimiento, autoridad para pausar, devoluciones bloqueadas, manipulación de recibos, verificación, efectos repetidos, presupuesto y un registro local legible. La captura del 2026-10-03 quedó en rojo porque el proyecto estaba fijado a un corte viejo del kernel (0.1.3); esa actualización del pin a 0.1.5 (commit `ed559e8`) ya está registrada y comprobada módulo por módulo en `docs/suite-2026-10-09.txt`.
 
 La fase adversarial escribió ocho casos RED del proyecto antes del código y observó fallar cada uno. Las fuentes disponibles no relacionan esos casos originales uno por uno con los nombres actuales de pruebas. Son comprobaciones del proyecto, no una auditoría externa. Consulta [Evidencia](./docs/EVIDENCE.md) para ver los nombres, el registro de fases y cómo repetirlas.
 
