@@ -1,6 +1,8 @@
-[![Farolero: bounded authority for AI agents](./assets/cover.png)](./assets/cover.png)
+<p align="center">
+  <a href="./assets/cover.png"><img src="./assets/cover.png" alt="Farolero: bounded authority for AI agents" width="100%"></a>
+</p>
 
-# Farolero
+<h1 align="center">Farolero</h1>
 
 <p align="center">
   <a href="#english"><img src="https://img.shields.io/badge/status-kernel_0.1.5_ed559e8-D7B698?style=for-the-badge&labelColor=07111A" alt="Status: kernel 0.1.5 (commit ed559e8)"></a>
@@ -14,7 +16,8 @@
 <p align="center"><b>Farolero</b> — give an AI agent a vague instruction and later nobody can say what it was allowed to do.<br>
 The permission, the spending limit and a readable record of what the agent actually did. Evidence: 13/13 tests. Fictional data; the agent's effects are local and reversible.</p>
 
-<p align="center"><b>Farolero is a project for making an AI agent's authority visible before it acts.</b><br>Its agreement defines what a person grants, where delegation stops, and how the local record should be checked.</p>
+<p align="center"><b>We’re applying to the Find Your Way hackathon and plan to participate in Meridian.</b></p>
+<p align="center"><b>For judges:</b> <a href="./docs/HOW_IT_WORKS.md">How it works</a> · <a href="./docs/EVIDENCE.md">Evidence</a> · <a href="./docs/LEGAL_AND_LIMITS.md">Limits</a> · <a href="./CODE_NOT_INCLUDED.md">Source and review terms</a>.<br>This public snapshot contains documentation and evidence, not runnable source.</p>
 
 ---
 
@@ -32,13 +35,6 @@ The permission, the spending limit and a readable record of what the agent actua
 An organization may know that an agent is helping, yet still struggle to answer the questions that matter after an action: who authorized it, what exactly was allowed, and did the agent stay within that boundary? When the answer lives in a prompt, a card, or a chat, the explanation is easy to lose and hard to check from outside the conversation.
 
 Farolero starts from that practical gap. A responsible person grants a specific permission. The agent may pass on only a narrower subset. A request that falls outside the permission returns as blocked, with a reason and a named next step for a person. That turns a vague instruction into a boundary the project can test and record.
-
-## If you are judging Find Your Way or Meridian, start here
-
-- Read the project foundation and its walkthrough. Start with [How it works](./docs/HOW_IT_WORKS.md).
-- Open the test record. See [Evidence](./docs/EVIDENCE.md).
-- Read the legal and verification limits. See [Legal and limits](./docs/LEGAL_AND_LIMITS.md).
-- Review the publication conditions. See [Code not included](./CODE_NOT_INCLUDED.md) and the [review-only license](./LICENSE).
 
 ## In one minute
 
@@ -157,6 +153,8 @@ Start with [How it works](./docs/HOW_IT_WORKS.md) for the agreement translated i
 
 <details>
 <summary><b>Leer en español</b></summary>
+
+<p align="center"><b>Postulamos a la hackatón Find Your Way y planeamos participar en Meridian.</b></p>
 
 <a id="espanol"></a>
 
