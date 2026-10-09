@@ -154,8 +154,6 @@ Start with [How it works](./docs/HOW_IT_WORKS.md) for the agreement translated i
 <details>
 <summary><b>Leer en español</b></summary>
 
-<p align="center"><b>Postulamos a la hackatón Find Your Way y planeamos participar en Meridian.</b></p>
-
 <a id="espanol"></a>
 
 <p align="center"><b>Farolero</b> — le das una instrucción vaga a un agente de IA y después nadie sabe qué podía hacer.<br>
