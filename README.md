@@ -12,9 +12,7 @@
 </p>
 
 <p align="center"><b>Farolero</b> — give an AI agent a vague instruction and later nobody can say what it was allowed to do.<br>
-The permission, the spending limit and a readable record of what the agent actually did. Evidence: 13/13 tests. Fictional data; the agent's effects are local and reversible.<br>
-<b>Farolero</b> — le das una instrucción vaga a un agente de IA y después nadie sabe qué podía hacer.<br>
-El permiso, el límite de gasto y un registro legible de lo que el agente hizo de verdad. Evidencia: 13/13 pruebas. Datos ficticios; los efectos del agente son locales y reversibles.</p>
+The permission, the spending limit and a readable record of what the agent actually did. Evidence: 13/13 tests. Fictional data; the agent's effects are local and reversible.</p>
 
 <p align="center"><b>Farolero is a project for making an AI agent's authority visible before it acts.</b><br>Its agreement defines what a person grants, where delegation stops, and how the local record should be checked.</p>
 
@@ -161,6 +159,9 @@ Start with [How it works](./docs/HOW_IT_WORKS.md) for the agreement translated i
 <summary><b>Leer en español</b></summary>
 
 <a id="espanol"></a>
+
+<p align="center"><b>Farolero</b> — le das una instrucción vaga a un agente de IA y después nadie sabe qué podía hacer.<br>
+El permiso, el límite de gasto y un registro legible de lo que el agente hizo de verdad. Evidencia: 13/13 pruebas. Datos ficticios; los efectos del agente son locales y reversibles.</p>
 
 **Farolero es un proyecto para volver visible la autoridad de un agente de IA antes de que actúe.**
 
