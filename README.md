@@ -156,9 +156,6 @@ Start with [How it works](./docs/HOW_IT_WORKS.md) for the agreement translated i
 
 <a id="espanol"></a>
 
-<p align="center"><b>Farolero</b> — le das una instrucción vaga a un agente de IA y después nadie sabe qué podía hacer.<br>
-El permiso, el límite de gasto y un registro legible de lo que el agente hizo de verdad. Evidencia: 13/13 pruebas. Datos ficticios; los efectos del agente son locales y reversibles.</p>
-
 **Farolero es un proyecto para volver visible la autoridad de un agente de IA antes de que actúe.**
 
 > **La unidad es un permiso acotado: quién puede hacer qué, respecto de qué sujeto, para qué operación, hasta cuándo, con qué presupuesto y hacia qué destino.**
