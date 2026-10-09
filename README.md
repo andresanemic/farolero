@@ -126,6 +126,8 @@ The adversarial phase wrote eight project RED cases before code and observed eac
 
 [Vespi](https://github.com/andresanemic/vespi) supplies the kernel Farolero consumes. Farolero does not change that kernel. This project uses its granted-authority model, kernel receipts, a human gate when an action is outside permission, verification separate from execution, and continuity based on receipts. [Lore Plugin](https://github.com/andresanemic/lore-plugin) is part of the project foundation; Farolero’s agreement and publication boundary remain its own.
 
+**What this relationship means.** The project was built with Lore Plugin's method (its agreement and criterion live in the project, in `acuerdo.md` and `lore/`), and its operations, authority and receipts run on the Vespi kernel 0.1.5, in the pinned copy that Lore Plugin 2.5.1 distributes (`skills/vespi/core/kernel`). That copy sits in the project as `vendor/vespi-kernel` and the suite verifies it against its `SOURCE.md`. Lore Plugin does not run inside the project. This project does not use the kernel's newer capabilities (Stellar pubnet anchors, live x402 settlement, the ZK verifier, emergency access); it exercises the core of operations, authority and receipts.
+
 ## What is not verified
 
 All sample agents and records are fictional. The current run has no real personal, health, financial, or third-party data, and no external effect. The materials do not establish legal identity, the truth of an input, anyone’s legal authority, legal admissibility, legal compliance, institutional adoption, or readiness for production or use. The cited Chilean Law 21.719 is problem context in the agreement; its primary text was not reviewed for this run, and the implementation was not checked against it. No legal professional reviewed these materials. More detail is in [Legal and limits](./docs/LEGAL_AND_LIMITS.md).
@@ -260,6 +262,8 @@ La fase adversarial escribió ocho casos RED del proyecto antes del código y ob
 ## Farolero, Vespi y Lore Plugin
 
 [Vespi](https://github.com/andresanemic/vespi) aporta el kernel que consume Farolero. Farolero no modifica ese kernel. Este proyecto usa su modelo de autoridad otorgada, los recibos del kernel, una compuerta humana si una acción queda fuera del permiso, la verificación separada de la ejecución y la continuidad basada en recibos. [Lore Plugin](https://github.com/andresanemic/lore-plugin) forma parte de los cimientos del proyecto; el acuerdo y los límites de publicación de Farolero son propios.
+
+**Qué significa esta relación.** El proyecto se construyó con el método de Lore Plugin (su acuerdo y su criterio viven en el proyecto, en `acuerdo.md` y `lore/`), y sus operaciones, autoridad y recibos corren sobre el kernel de Vespi 0.1.5, en la copia fijada que distribuye Lore Plugin 2.5.1 (`skills/vespi/core/kernel`). Esa copia está en el proyecto como `vendor/vespi-kernel` y la suite la verifica contra su `SOURCE.md`. Lore Plugin no corre dentro del proyecto. Este proyecto no usa las capacidades nuevas del kernel (anclas Stellar pubnet, liquidación x402 en vivo, el verificador ZK, el acceso de emergencia); ejerce el núcleo de operaciones, autoridad y recibos.
 
 ## Qué no está verificado
 
