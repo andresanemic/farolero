@@ -11,7 +11,12 @@
   <a href="https://github.com/andresanemic/vespi/tree/ed559e83c976dd6e6a379a5510db776206f670b4"><img src="https://img.shields.io/badge/kernel-0.1.5_release-ed559e8?style=for-the-badge&labelColor=07111A&color=E0C170" alt="Kernel: 0.1.5 release (commit ed559e8)"></a>
 </p>
 
-<p align="center"><b>Farolero is a project for making an AI agent’s authority visible before it acts.</b><br>Its agreement defines what a person grants, where delegation stops, and how the local record should be checked.</p>
+<p align="center"><b>Farolero</b> — give an AI agent a vague instruction and later nobody can say what it was allowed to do.<br>
+The permission, the spending limit and a readable record of what the agent actually did. Evidence: 13/13 tests. Fictional data; the agent's effects are local and reversible.<br>
+<b>Farolero</b> — le das una instrucción vaga a un agente de IA y después nadie sabe qué podía hacer.<br>
+El permiso, el límite de gasto y un registro legible de lo que el agente hizo de verdad. Evidencia: 13/13 pruebas. Datos ficticios; los efectos del agente son locales y reversibles.</p>
+
+<p align="center"><b>Farolero is a project for making an AI agent's authority visible before it acts.</b><br>Its agreement defines what a person grants, where delegation stops, and how the local record should be checked.</p>
 
 ---
 
