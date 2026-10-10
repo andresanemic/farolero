@@ -16,8 +16,6 @@
 <p align="center"><b>Farolero</b> — give an AI agent a vague instruction and later nobody can say what it was allowed to do.<br>
 The permission, the spending limit and a readable record of what the agent actually did. Evidence: 13/13 tests. Fictional data; the agent's effects are local and reversible.</p>
 
-<p align="center"><a href="#english"><b>Read in English</b></a> · <a href="#espanol"><b>Leer en español</b></a></p>
-
 <p align="center"><b>We’re applying to the Find Your Way hackathon and plan to participate in Meridian.</b></p>
 <p align="center"><b>For judges:</b> <a href="./docs/HOW_IT_WORKS.md">How it works</a> · <a href="./docs/EVIDENCE.md">Evidence</a> · <a href="./docs/LEGAL_AND_LIMITS.md">Limits</a> · <a href="./CODE_NOT_INCLUDED.md">Source and review terms</a>.<br>This public snapshot contains documentation and evidence, not runnable source.</p>
 
