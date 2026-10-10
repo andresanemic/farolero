@@ -16,7 +16,7 @@ No legal professional has reviewed the project materials. This document is not l
 
 ## Project limits
 
-The described effect is a local, reversible write to a project file. No network, blockchain, payment, testnet anchor, or institutional integration is active. Farolero consumes the Vespi kernel and does not modify it. Source code is not included in this public repository today. The captured suite result and kernel pin update are described in [`EVIDENCE.md`](EVIDENCE.md).
+The described effect is a local, reversible write to a project file. No network, blockchain, payment, testnet anchor, or institutional integration is active. Farolero consumes the Vespi kernel and does not modify it. The source code is in this repository under a review-only license. The captured suite result and kernel pin update are described in [`EVIDENCE.md`](EVIDENCE.md).
 
 These limits apply to the project run described by the supplied agreement and evidence. They do not establish what a future implementation or deployment would do.
 
@@ -47,7 +47,7 @@ Ningún profesional del derecho ha revisado los materiales del proyecto. Este do
 
 ## Límites del proyecto
 
-El efecto descrito es escribir de forma local y reversible en un archivo del proyecto. No hay red, blockchain, pagos, anclaje en testnet ni integración institucional activa. Farolero consume el kernel Vespi y no lo modifica. Hoy este repositorio público no incluye el código fuente. El resultado capturado de la suite y la actualización del pin del kernel se describen en [`EVIDENCE.md`](EVIDENCE.md).
+El efecto descrito es escribir de forma local y reversible en un archivo del proyecto. No hay red, blockchain, pagos, anclaje en testnet ni integración institucional activa. Farolero consume el kernel Vespi y no lo modifica. El código fuente está en este repositorio bajo una licencia de solo revisión. El resultado capturado de la suite y la actualización del pin del kernel se describen en [`EVIDENCE.md`](EVIDENCE.md).
 
 Estos límites corresponden al recorrido del proyecto descrito por el acuerdo y la evidencia suministrados. No establecen qué haría una implementación o un despliegue futuro.
 

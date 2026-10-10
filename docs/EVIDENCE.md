@@ -2,7 +2,7 @@
 
 ## What was available for this review
 
-The review snapshot includes the project agreement, phase record, and a captured test output dated 2026-10-09 (`docs/suite-2026-10-09.txt`). It does not include the source code, a testnet run, or public transaction evidence. The agreement says the example data is synthetic, the effect is local and reversible, and the project has no blockchain, payment, network, or institutional integration.
+The review snapshot includes the project agreement, phase record, and a captured test output dated 2026-10-09 (`docs/suite-2026-10-09.txt`). The source code is in this repository under the review-only license; the review snapshot itself does not include a testnet run or public transaction evidence. The agreement says the example data is synthetic, the effect is local and reversible, and the project has no blockchain, payment, network, or institutional integration.
 
 ## Today’s suite result
 
@@ -49,9 +49,9 @@ The 2026-10-03 capture was red because the project was pinned to an older kernel
 
 The phase record says eight project RED cases were written before code and that each one stayed red when observed. The agreement defines the behaviors those cases concern: absent or expired authority, destination and budget limits, narrowing delegation, repeated effects, receipt integrity, verification separate from execution, who may pause, blocked returns to a person, and a readable local record. The supplied snapshot does not map each original RED case one by one to the current named tests. These are project adversarial checks, not an independent audit; no separate independent-review report is included.
 
-## How to rerun when the code opens
+## How to rerun the suite
 
-When source code is published, inspect the pinned kernel digest and exact dependency versions first. Run `npm test` from the repository root in a fresh session. The suite must report the same 13 named tests with 13 passing, and `docs/suite-2026-10-09.txt` is the reference to compare against. Inspect each changed result and the receipt artifacts before describing the suite as green. The supplied package manifest also lists `npm run recorrido` for the local walkthrough. These commands come from that manifest; this review did not run them because the source code is not included.
+The source code is in this repository under the review-only license (reading and cloning for evaluation; no modification or redistribution). Inspect the pinned kernel digest and exact dependency versions first. Run `npm test` on Node 24 from the repository root in a fresh session. The suite must report the same 13 named tests with 13 passing, and `docs/suite-2026-10-09.txt` is the reference to compare against. Inspect each changed result and the receipt artifacts before describing the suite as green. The supplied package manifest also lists `npm run recorrido` for the local walkthrough. These commands come from that manifest; this documentation review did not run them.
 
 There are no testnet transaction hashes to inspect. The agreement says Farolero does not use blockchain or a testnet anchor.
 
@@ -63,7 +63,7 @@ This is one captured suite result. It does not establish behavior for every inpu
 
 ## Material disponible para esta revisión
 
-La captura de revisión incluye el acuerdo del proyecto, el registro de fases y una salida de pruebas fechada el 2026-10-09 (`docs/suite-2026-10-09.txt`). No incluye el código fuente, una corrida en testnet ni evidencia pública de transacciones. El acuerdo dice que los datos de ejemplo son sintéticos, que el efecto es local y reversible, y que el proyecto no tiene blockchain, pagos, red ni integración institucional.
+La captura de revisión incluye el acuerdo del proyecto, el registro de fases y una salida de pruebas fechada el 2026-10-09 (`docs/suite-2026-10-09.txt`). El código fuente está en este repositorio bajo la licencia de solo revisión; la captura de revisión en sí no incluye una corrida en testnet ni evidencia pública de transacciones. El acuerdo dice que los datos de ejemplo son sintéticos, que el efecto es local y reversible, y que el proyecto no tiene blockchain, pagos, red ni integración institucional.
 
 ## Resultado de la suite hoy
 
@@ -110,9 +110,9 @@ La captura del 2026-10-03 quedó en rojo porque el proyecto estaba fijado a un c
 
 El registro de fases dice que los ocho casos RED del proyecto se escribieron antes del código y que se observó fallar cada uno. El acuerdo define las conductas que cubrían: autoridad ausente o vencida, límites de destino y presupuesto, delegación que reduce, efectos repetidos, integridad del recibo, verificación separada de la ejecución, quién puede pausar, devoluciones bloqueadas a una persona y un registro local legible. La captura suministrada no relaciona uno por uno los casos RED originales con las pruebas actuales. Son comprobaciones adversariales del proyecto, no una auditoría externa; no se incluye un informe separado de revisión externa.
 
-## Cómo volver a correr las pruebas cuando se abra el código
+## Cómo volver a correr las pruebas
 
-Cuando se publique el código fuente, primero revisa el digest fijado del kernel y las versiones exactas de dependencias. Ejecuta `npm test` desde la raíz del repositorio en una sesión nueva. La suite debe informar las mismas 13 pruebas nombradas con 13 que pasan, y `docs/suite-2026-10-09.txt` es la referencia para comparar. Revisa cada resultado que cambie y los artefactos de recibos antes de describir la suite como verde. El manifiesto suministrado también lista `npm run recorrido` para el recorrido local. Estos comandos constan en ese manifiesto; esta revisión no los ejecutó porque no se incluye el código fuente.
+El código fuente está en este repositorio bajo la licencia de solo revisión (permite leer y clonar para evaluar, no modificar ni redistribuir). Primero revisa el digest fijado del kernel y las versiones exactas de dependencias. Ejecuta `npm test` con Node 24 desde la raíz del repositorio en una sesión nueva. La suite debe informar las mismas 13 pruebas nombradas con 13 que pasan, y `docs/suite-2026-10-09.txt` es la referencia para comparar. Revisa cada resultado que cambie y los artefactos de recibos antes de describir la suite como verde. El manifiesto suministrado también lista `npm run recorrido` para el recorrido local. Estos comandos constan en ese manifiesto; esta revisión documental no los ejecutó.
 
 No hay hashes de transacciones de testnet que revisar. El acuerdo dice que Farolero no usa blockchain ni anclaje en testnet.
 

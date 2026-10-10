@@ -1,0 +1,11 @@
+{
+  "name": "farolero",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Proyecto 8 de los diez de Vespi: autoridad para agentes sin código. Consume el kernel de Vespi; no lo modifica.",
+  "scripts": {
+    "test": "node --test \"test/*.test.js\"",
+    "recorrido": "node src/recorrido.js",
+    "cli": "node src/cli.js"
+  }
+}

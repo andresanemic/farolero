@@ -17,7 +17,7 @@
 The permission, the spending limit and a readable record of what the agent actually did. Evidence: 13/13 tests. Fictional data; the agent's effects are local and reversible.</p>
 
 <p align="center"><b>We’re applying to the Find Your Way hackathon and plan to participate in Meridian.</b></p>
-<p align="center"><b>For judges:</b> <a href="./docs/HOW_IT_WORKS.md">How it works</a> · <a href="./docs/EVIDENCE.md">Evidence</a> · <a href="./docs/LEGAL_AND_LIMITS.md">Limits</a> · <a href="./CODE_NOT_INCLUDED.md">Source and review terms</a>.<br>This public snapshot contains documentation and evidence, not runnable source.</p>
+<p align="center"><b>For judges:</b> <a href="./docs/HOW_IT_WORKS.md">How it works</a> · <a href="./docs/EVIDENCE.md">Evidence</a> · <a href="./docs/LEGAL_AND_LIMITS.md">Limits</a> · <a href="./LICENSE">Review-only license</a>.<br>The source is in this repository: run <code>npm test</code> on Node 24.</p>
 
 ---
 
@@ -42,7 +42,7 @@ Imagine a fictional archive that asks an agent to add a line to a local project 
 
 ## What it looks like in practice
 
-The case below is fictional. It follows the agreement’s rules rather than pretending to show output from the program. The public snapshot contains no captured output for the walkthrough command, so the only terminal-style excerpts here are exact test names and statuses from the supplied suite capture.
+The case below is fictional. It follows the agreement’s rules rather than pretending to show output from the program. The repository contains no captured output for the walkthrough command, so the only terminal-style excerpts here are exact test names and statuses from the supplied suite capture.
 
 Suppose a fictional community archive wants an agent called *Scribe* to add one entry to a local record. The person granting authority fixes the subject, operation, end time, budget, and destination. A second fictional agent, *Index*, can receive a smaller permission. The request to add the entry at the named local destination fits; a request to send it to another destination does not. That second request comes back blocked with a reason and a next step for the person, rather than being silently redirected.
 
@@ -133,7 +133,7 @@ All sample agents and records are fictional. The current run has no real persona
 
 ## How to review this project
 
-Start with [How it works](./docs/HOW_IT_WORKS.md) for the agreement translated into the operating model. Then open [Evidence](./docs/EVIDENCE.md) for the captured suite and its limits, and [Legal and limits](./docs/LEGAL_AND_LIMITS.md) for the boundary of the claims. The source code is not included today; [Code not included](./CODE_NOT_INCLUDED.md) explains the publication condition. The [review-only license](./LICENSE) permits reading and cloning for evaluation, not modifying the code.
+Start with [How it works](./docs/HOW_IT_WORKS.md) for the agreement translated into the operating model. Then open [Evidence](./docs/EVIDENCE.md) for the captured suite and its limits, and [Legal and limits](./docs/LEGAL_AND_LIMITS.md) for the boundary of the claims. The source is in this repository: run `npm test` on Node 24 from the project root. The [review-only license](./LICENSE) permits reading and cloning for evaluation, not modifying the code.
 
 ## Author
 
@@ -147,7 +147,7 @@ Start with [How it works](./docs/HOW_IT_WORKS.md) for the agreement translated i
 
 ---
 
-[How it works](./docs/HOW_IT_WORKS.md) · [Evidence](./docs/EVIDENCE.md) · [Legal and limits](./docs/LEGAL_AND_LIMITS.md) · [Code not included](./CODE_NOT_INCLUDED.md) · [Review-only license](./LICENSE) · [Vespi](https://github.com/andresanemic/vespi) · [Lore Plugin](https://github.com/andresanemic/lore-plugin)
+[How it works](./docs/HOW_IT_WORKS.md) · [Evidence](./docs/EVIDENCE.md) · [Legal and limits](./docs/LEGAL_AND_LIMITS.md) · [Review-only license](./LICENSE) · [Vespi](https://github.com/andresanemic/vespi) · [Lore Plugin](https://github.com/andresanemic/lore-plugin)
 
 </details>
 
@@ -171,7 +171,7 @@ Farolero parte de esa brecha práctica. El acuerdo define cómo una persona resp
 - Lee la base del proyecto y su recorrido. Empieza por [Cómo funciona](./docs/HOW_IT_WORKS.md).
 - Abre el registro de pruebas. Consulta [Evidencia](./docs/EVIDENCE.md).
 - Lee los límites jurídicos y de verificación. Consulta [Marco legal y límites](./docs/LEGAL_AND_LIMITS.md).
-- Revisa las condiciones de publicación. Consulta [Código no incluido](./CODE_NOT_INCLUDED.md) y la [licencia de solo revisión](./LICENSE).
+- Lee los términos en la [licencia de solo revisión](./LICENSE) y ejecuta `npm test` (Node 24).
 
 ## En un minuto
 
@@ -270,7 +270,7 @@ Todos los agentes y registros de ejemplo son ficticios. El recorrido actual no u
 
 ## Cómo revisar este proyecto
 
-Empieza por [Cómo funciona](./docs/HOW_IT_WORKS.md), donde el acuerdo se expresa como modelo operativo. Después abre [Evidencia](./docs/EVIDENCE.md) para consultar la suite capturada y sus límites, y [Marco legal y límites](./docs/LEGAL_AND_LIMITS.md) para conocer la frontera de las afirmaciones. El código fuente no está incluido hoy; [Código no incluido](./CODE_NOT_INCLUDED.md) explica la condición de publicación. La [licencia de solo revisión](./LICENSE) permite leer y clonar para evaluar, no modificar el código.
+Empieza por [Cómo funciona](./docs/HOW_IT_WORKS.md), donde el acuerdo se expresa como modelo operativo. Después abre [Evidencia](./docs/EVIDENCE.md) para consultar la suite capturada y sus límites, y [Marco legal y límites](./docs/LEGAL_AND_LIMITS.md) para conocer la frontera de las afirmaciones. El código está en este repositorio: ejecuta `npm test` con Node 24 desde la raíz del proyecto. La [licencia de solo revisión](./LICENSE) permite leer y clonar para evaluar, no modificar el código.
 
 ## Autoría
 
@@ -284,6 +284,6 @@ Empieza por [Cómo funciona](./docs/HOW_IT_WORKS.md), donde el acuerdo se expres
 
 ---
 
-[Cómo funciona](./docs/HOW_IT_WORKS.md) · [Evidencia](./docs/EVIDENCE.md) · [Marco legal y límites](./docs/LEGAL_AND_LIMITS.md) · [Código no incluido](./CODE_NOT_INCLUDED.md) · [Licencia de solo revisión](./LICENSE) · [Vespi](https://github.com/andresanemic/vespi) · [Lore Plugin](https://github.com/andresanemic/lore-plugin)
+[Cómo funciona](./docs/HOW_IT_WORKS.md) · [Evidencia](./docs/EVIDENCE.md) · [Marco legal y límites](./docs/LEGAL_AND_LIMITS.md) · [Licencia de solo revisión](./LICENSE) · [Vespi](https://github.com/andresanemic/vespi) · [Lore Plugin](https://github.com/andresanemic/lore-plugin)
 
 </details>

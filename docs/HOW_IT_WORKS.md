@@ -18,7 +18,7 @@ The agreement was written before code. It sets the project boundary and the beha
 
 ## Walkthrough: one local record entry
 
-The following case is fictional and explanatory. The public evidence snapshot does not contain the walkthrough command’s output, so this is a description of the agreed rules, not a transcript from a run.
+The following case is fictional and explanatory. The repository's evidence does not contain the walkthrough command’s output, so this is a description of the agreed rules, not a transcript from a run.
 
 Imagine a fictional community archive with a fictional agent asked to add one entry to a local project record. The responsible person grants authority for a named subject and operation, a defined time window, a budget ceiling, and one named destination. If any required dimension is missing, the permission is rejected rather than saved as an open-ended instruction.
 
@@ -67,7 +67,7 @@ El acuerdo se escribió antes del código. Define los límites del proyecto y la
 
 ## Recorrido: una entrada en un registro local
 
-El caso siguiente es ficticio y explicativo. La captura pública de evidencia no incluye la salida del comando de recorrido, así que esta es una descripción de las reglas acordadas, no la transcripción de una corrida.
+El caso siguiente es ficticio y explicativo. La evidencia del repositorio no incluye la salida del comando de recorrido, así que esta es una descripción de las reglas acordadas, no la transcripción de una corrida.
 
 Imagina un archivo comunitario ficticio con un agente ficticio al que le piden añadir una entrada a un registro local del proyecto. La persona responsable concede autoridad para un sujeto y una operación nombrados, un plazo definido, un límite de presupuesto y un destino concreto. Si falta una dimensión necesaria, el permiso se rechaza en vez de guardarse como una instrucción abierta.
 
