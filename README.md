@@ -7,11 +7,12 @@
 <p align="center">
   <a href="#english"><img src="https://img.shields.io/badge/status-working_path-D7B698?style=for-the-badge&labelColor=07111A" alt="Status: working path"></a>
   <a href="./LICENSE"><img src="https://img.shields.io/badge/license-review--only-D7B698?style=for-the-badge&labelColor=07111A" alt="License: review only"></a>
-  <a href="./docs/EVIDENCE.md"><img src="https://img.shields.io/badge/suite-13_of_13_pass-D7B698?style=for-the-badge&labelColor=07111A" alt="Suite: 13 of 13 tests pass"></a>
+  <a href="./docs/EVIDENCE.md"><img src="https://img.shields.io/badge/suite-13_of_13_pass-D7B698?style=for-the-badge&labelColor=07111A" alt="Suite: 13 of 13 tests pass"></a> <b>It worked.</b>
   <a href="./docs/HOW_IT_WORKS.md"><img src="https://img.shields.io/badge/agreement-written_before_code-E0C170?style=for-the-badge&labelColor=07111A" alt="Agreement written before code"></a>
   <a href="https://github.com/andresanemic/vespi"><img src="https://img.shields.io/badge/built_with-Vespi_%C2%B7_Lore_Plugin-E0C170?style=for-the-badge&labelColor=07111A" alt="Built with Vespi and Lore Plugin"></a>
-  <a href="https://github.com/andresanemic/vespi/tree/ed559e83c976dd6e6a379a5510db776206f670b4"><img src="https://img.shields.io/badge/kernel-0.1.5_release-ed559e8?style=for-the-badge&labelColor=07111A&color=E0C170" alt="Kernel: 0.1.5 release (commit ed559e8)"></a>
+  <a href="https://github.com/andresanemic/vespi/tree/95f2d614f4492056c8bb2cd951f08d1089027d4f"><img src="https://img.shields.io/badge/kernel-0.1.6_pin-95f2d61?style=for-the-badge&labelColor=07111A&color=E0C170" alt="Kernel: 0.1.6 source pin (commit 95f2d61)"></a>
 </p>
+
 
 <p align="center"><b>Farolero</b> — give an AI agent a vague instruction and later nobody can say what it was allowed to do.<br>
 The permission, the spending limit and a readable record of what the agent actually did. Evidence: 13/13 tests. Fictional data; the agent's effects are local and reversible.</p>
@@ -128,7 +129,7 @@ Farolero is not a passive directory, an identity system, a configuration dashboa
 
 ## Evidence you can open
 
-The captured suite dated 2026-10-09 reports 13 tests: 13 pass, none unsuccessful, none skipped, under Node v24.15.0. It covers permission boundaries, delegation, expiry, pausing authority, blocked returns, receipt tampering, verification, repeated effects, budget limits, and a readable local record. The 2026-10-03 capture was red because the project was pinned to an older kernel cut (0.1.3); that pin update to 0.1.5 (commit `ed559e8`) is now recorded and checked module by module in `docs/suite-2026-10-09.txt`.
+The captured suite dated 2026-10-09 reports 13 tests: 13 pass, none unsuccessful, none skipped, under Node v24.15.0. It covers permission boundaries, delegation, expiry, pausing authority, blocked returns, receipt tampering, verification, repeated effects, budget limits, and a readable local record. The 2026-10-03 capture was red because the project was pinned to an older kernel cut (0.1.3); that pin update to 0.1.6 (commit `95f2d61`) is now recorded and checked module by module in `docs/suite-2026-10-09.txt`.
 
 The adversarial phase wrote eight project RED cases before code and observed each one stay red. The available sources do not map those original cases one by one to the current test names. These are project checks, not an external audit. Read [Evidence](./docs/EVIDENCE.md) for the names, phase record, and rerun instructions.
 
@@ -136,7 +137,7 @@ The adversarial phase wrote eight project RED cases before code and observed eac
 
 [Vespi](https://github.com/andresanemic/vespi) supplies the kernel Farolero consumes. Farolero does not change that kernel. This project uses its granted-authority model, kernel receipts, a human gate when an action is outside permission, verification separate from execution, and continuity based on receipts. [Lore Plugin](https://github.com/andresanemic/lore-plugin) is part of the project foundation; Farolero’s agreement and publication boundary remain its own.
 
-**What this relationship means.** The project was built with Lore Plugin's method (its agreement and criterion live in the project, in `acuerdo.md` and `lore/`), and its operations, authority and receipts run on the Vespi kernel 0.1.5, in the pinned copy that Lore Plugin 2.5.1 distributes (`skills/vespi/core/kernel`). That copy sits in the project as `vendor/vespi-kernel` and the suite verifies it against its `SOURCE.md`. Lore Plugin does not run inside the project. This project does not use the kernel's newer capabilities (Stellar pubnet anchors, live x402 settlement, the ZK verifier, emergency access); it exercises the core of operations, authority and receipts.
+**What this relationship means.** The project was built with Lore Plugin's method (its agreement and criterion live in the project, in `acuerdo.md` and `lore/`), and its operations, authority and receipts run on the Vespi kernel 0.1.6, in the pinned copy prepared for Lore Plugin 2.5.2 (`skills/vespi/core/kernel`). That copy sits in the project as `vendor/vespi-kernel` and the suite verifies it against its `SOURCE.md`. Lore Plugin does not run inside the project. This project does not use the kernel's newer capabilities (Stellar pubnet anchors, live x402 settlement, the ZK verifier, emergency access); it exercises the core of operations, authority and receipts.
 
 ## What is not verified
 
@@ -166,6 +167,8 @@ Start with [How it works](./docs/HOW_IT_WORKS.md) for the agreement translated i
 <summary><b>Leer en español</b></summary>
 
 <a id="espanol"></a>
+
+<p align="center"><b>Funcionó.</b></p>
 
 **Farolero es un proyecto para volver visible la autoridad de un agente de IA antes de que actúe.**
 
@@ -265,7 +268,7 @@ Farolero no es un directorio pasivo, un sistema de identidad, un panel de config
 
 ## Evidencia que puedes abrir
 
-La suite capturada el 2026-10-09 informa 13 pruebas: 13 pasan, ninguna sin pasar, ninguna omitida, con Node v24.15.0. Cubre límites de permisos, delegación, vencimiento, autoridad para pausar, devoluciones bloqueadas, manipulación de recibos, verificación, efectos repetidos, presupuesto y un registro local legible. La captura del 2026-10-03 quedó en rojo porque el proyecto estaba fijado a un corte viejo del kernel (0.1.3); esa actualización del pin a 0.1.5 (commit `ed559e8`) ya está registrada y comprobada módulo por módulo en `docs/suite-2026-10-09.txt`.
+La suite capturada el 2026-10-09 informa 13 pruebas: 13 pasan, ninguna sin pasar, ninguna omitida, con Node v24.15.0. Cubre límites de permisos, delegación, vencimiento, autoridad para pausar, devoluciones bloqueadas, manipulación de recibos, verificación, efectos repetidos, presupuesto y un registro local legible. La captura del 2026-10-03 quedó en rojo porque el proyecto estaba fijado a un corte viejo del kernel (0.1.3); esa actualización del pin a 0.1.6 (commit `95f2d61`) ya está registrada y comprobada módulo por módulo en `docs/suite-2026-10-09.txt`.
 
 La fase adversarial escribió ocho casos RED del proyecto antes del código y observó fallar cada uno. Las fuentes disponibles no relacionan esos casos originales uno por uno con los nombres actuales de pruebas. Son comprobaciones del proyecto, no una auditoría externa. Consulta [Evidencia](./docs/EVIDENCE.md) para ver los nombres, el registro de fases y cómo repetirlas.
 
@@ -273,7 +276,7 @@ La fase adversarial escribió ocho casos RED del proyecto antes del código y ob
 
 [Vespi](https://github.com/andresanemic/vespi) aporta el kernel que consume Farolero. Farolero no modifica ese kernel. Este proyecto usa su modelo de autoridad otorgada, los recibos del kernel, una compuerta humana si una acción queda fuera del permiso, la verificación separada de la ejecución y la continuidad basada en recibos. [Lore Plugin](https://github.com/andresanemic/lore-plugin) forma parte de los cimientos del proyecto; el acuerdo y los límites de publicación de Farolero son propios.
 
-**Qué significa esta relación.** El proyecto se construyó con el método de Lore Plugin (su acuerdo y su criterio viven en el proyecto, en `acuerdo.md` y `lore/`), y sus operaciones, autoridad y recibos corren sobre el kernel de Vespi 0.1.5, en la copia fijada que distribuye Lore Plugin 2.5.1 (`skills/vespi/core/kernel`). Esa copia está en el proyecto como `vendor/vespi-kernel` y la suite la verifica contra su `SOURCE.md`. Lore Plugin no corre dentro del proyecto. Este proyecto no usa las capacidades nuevas del kernel (anclas Stellar pubnet, liquidación x402 en vivo, el verificador ZK, el acceso de emergencia); ejerce el núcleo de operaciones, autoridad y recibos.
+**Qué significa esta relación.** El proyecto se construyó con el método de Lore Plugin (su acuerdo y su criterio viven en el proyecto, en `acuerdo.md` y `lore/`), y sus operaciones, autoridad y recibos corren sobre el kernel de Vespi 0.1.6, en la copia fijada para Lore Plugin 2.5.2 (`skills/vespi/core/kernel`). Esa copia está en el proyecto como `vendor/vespi-kernel` y la suite la verifica contra su `SOURCE.md`. Lore Plugin no corre dentro del proyecto. Este proyecto no usa las capacidades nuevas del kernel (anclas Stellar pubnet, liquidación x402 en vivo, el verificador ZK, el acceso de emergencia); ejerce el núcleo de operaciones, autoridad y recibos.
 
 ## Qué no está verificado
 

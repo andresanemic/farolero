@@ -6,7 +6,7 @@ The review snapshot includes the project agreement, phase record, and a captured
 
 ## Today’s suite result
 
-The captured output reports 13 tests: 13 pass, none unsuccessful, none skipped, under Node v24.15.0. The run used `node --test test/*.test.js` in a clean clone, with empty HOME and no network. The names below are copied from the supplied test output; status is from that capture. The kernel consumed is Vespi 0.1.5 (commit `ed559e83c976dd6e6a379a5510db776206f670b4`), copied in `vendor/vespi-kernel` and checked against its SOURCE.md digest module by module.
+The captured output reports 13 tests: 13 pass, none unsuccessful, none skipped, under Node v24.15.0. The run used `node --test test/*.test.js` in a clean clone, with empty HOME and no network. The names below are copied from the supplied test output; status is from that capture. The kernel consumed is Vespi 0.1.6 (commit `95f2d614f4492056c8bb2cd951f08d1089027d4f`), copied in `vendor/vespi-kernel` and checked against its SOURCE.md digest module by module.
 
 ### Permission boundaries and authority
 
@@ -43,7 +43,7 @@ The captured output reports 13 tests: 13 pass, none unsuccessful, none skipped, 
 
 ## Why the earlier capture was red
 
-The 2026-10-03 capture was red because the project was pinned to an older kernel cut (0.1.3). That pin update to 0.1.5 (commit `ed559e8`) is now recorded, and the 2026-10-09 capture checks the vendored copy module by module against its SOURCE.md. A green suite covers only what those named tests check.
+The 2026-10-03 capture was red because the project was pinned to an older kernel cut (0.1.3). That pin update to 0.1.6 (commit `95f2d61`) is now recorded, and the 2026-10-09 capture checks the vendored copy module by module against its SOURCE.md. A green suite covers only what those named tests check.
 
 ## What the adversarial phase found
 
@@ -67,7 +67,7 @@ La captura de revisión incluye el acuerdo del proyecto, el registro de fases y 
 
 ## Resultado de la suite hoy
 
-La salida capturada informa 13 pruebas: 13 pasan, ninguna sin pasar, ninguna omitida, con Node v24.15.0. La corrida usó `node --test test/*.test.js` en un clon limpio, con HOME vacío y sin red. Los nombres siguientes se copian de la salida suministrada; el estado corresponde a esa captura. El kernel consumido es Vespi 0.1.5 (commit `ed559e83c976dd6e6a379a5510db776206f670b4`), copiado en `vendor/vespi-kernel` y comprobado contra su SOURCE.md digest módulo por módulo.
+La salida capturada informa 13 pruebas: 13 pasan, ninguna sin pasar, ninguna omitida, con Node v24.15.0. La corrida usó `node --test test/*.test.js` en un clon limpio, con HOME vacío y sin red. Los nombres siguientes se copian de la salida suministrada; el estado corresponde a esa captura. El kernel consumido es Vespi 0.1.6 (commit `95f2d614f4492056c8bb2cd951f08d1089027d4f`), copiado en `vendor/vespi-kernel` y comprobado contra su SOURCE.md digest módulo por módulo.
 
 ### Límites del permiso y autoridad
 
@@ -104,7 +104,7 @@ La salida capturada informa 13 pruebas: 13 pasan, ninguna sin pasar, ninguna omi
 
 ## Por qué la captura anterior quedó en rojo
 
-La captura del 2026-10-03 quedó en rojo porque el proyecto estaba fijado a un corte viejo del kernel (0.1.3). Esa actualización del pin a 0.1.5 (commit `ed559e8`) ya está registrada, y la captura del 2026-10-09 comprueba la copia interna módulo por módulo contra su SOURCE.md. Una suite en verde cubre solo lo que esas pruebas nombran.
+La captura del 2026-10-03 quedó en rojo porque el proyecto estaba fijado a un corte viejo del kernel (0.1.3). Esa actualización del pin a 0.1.6 (commit `95f2d61`) ya está registrada, y la captura del 2026-10-09 comprueba la copia interna módulo por módulo contra su SOURCE.md. Una suite en verde cubre solo lo que esas pruebas nombran.
 
 ## Qué encontró la fase adversarial
 
