@@ -141,6 +141,9 @@ The adversarial phase wrote eight project RED cases before code and observed eac
 
 ## What is not verified
 
+Review status: this project has not been audited. The Vespi kernel it runs on has had superreviews with Claude Code and no independent external security audit.
+
+
 All sample agents and records are fictional. The current run has no real personal, health, financial, or third-party data, and no external effect. The materials do not establish legal identity, the truth of an input, anyone’s legal authority, legal admissibility, legal compliance, institutional adoption, or readiness for production or use. The cited Chilean Law 21.719 is problem context in the agreement; its primary text was not reviewed for this run, and the implementation was not checked against it. No legal professional reviewed these materials. More detail is in [Legal and limits](./docs/LEGAL_AND_LIMITS.md).
 
 ## How to review this project
@@ -279,6 +282,9 @@ La fase adversarial escribió ocho casos RED del proyecto antes del código y ob
 **Qué significa esta relación.** El proyecto se construyó con el método de Lore Plugin (su acuerdo y su criterio viven en el proyecto, en `acuerdo.md` y `lore/`), y sus operaciones, autoridad y recibos corren sobre el kernel de Vespi 0.1.6, en la copia fijada para Lore Plugin 2.5.2 (`skills/vespi/core/kernel`). Esa copia está en el proyecto como `vendor/vespi-kernel` y la suite la verifica contra su `SOURCE.md`. Lore Plugin no corre dentro del proyecto. Este proyecto no usa las capacidades nuevas del kernel (anclas Stellar pubnet, liquidación x402 en vivo, el verificador ZK, el acceso de emergencia); ejerce el núcleo de operaciones, autoridad y recibos.
 
 ## Qué no está verificado
+
+Estado de revisión: este proyecto no ha sido auditado. El kernel de Vespi sobre el que corre ha tenido superreviews con Claude Code y ninguna auditoría de seguridad externa independiente.
+
 
 Todos los agentes y registros de ejemplo son ficticios. El recorrido actual no usa datos personales, de salud, financieros ni de terceros reales, y no produce efectos externos. Los materiales no establecen identidad legal, verdad de una entrada, autoridad jurídica de una persona, admisibilidad jurídica, cumplimiento legal, adopción institucional ni preparación para producción o uso. El acuerdo cita la Ley 21.719 de Chile como contexto del problema; en este recorrido no se revisó su texto primario ni se comprobó la implementación frente a ella. Ningún profesional del derecho revisó estos materiales. Hay más detalle en [Marco legal y límites](./docs/LEGAL_AND_LIMITS.md).
 
