@@ -1,21 +1,21 @@
 Suite capture — farolero — 2026-10-11
-Command: node --test test/*.test.js (clean clone of commit 174b29e, empty HOME, no network)
+Command: node --test test/*.test.js (clean clone of commit 67dbece, empty HOME, no network)
 Node: v24.15.0 · Kernel: Vespi 0.1.6, commit 39d45733839d0a05f60248fc6e5b81c892c464f8, copied in vendor/vespi-kernel
 Summary: tests 13 pass 13 fail 0 cancelled 0 skipped 0 todo 0 
 
-✔ el núcleo que consume Farolero es el corte fijado, módulo por módulo (69.7284ms)
-✔ el encabezado de los cinco módulos declara el mismo commit (1.7144ms)
-✔ sin permiso, la ejecución queda bloqueada y vuelve a la persona con la salida (11.816ms)
-✔ con el permiso vencido, el bloqueo nombra la hora en que murió (8.8545ms)
-✔ con el mismo permiso y otro destino, el bloqueo nombra los dos destinos (8.8731ms)
-✔ el presupuesto es un límite duro y se acumula entre ejecuciones (18.8609ms)
-✔ un delegado no puede recibir más de lo que su delegante tiene (11.6568ms)
-✔ el mismo efecto no se ejecuta dos veces: el segundo intento devuelve el recibo del primero (16.7754ms)
-✔ un recibo editado a mano no verifica (11.9348ms)
-✔ un verificador que solo cree al ejecutor no puede producir un verde en la auditoría (25.2725ms)
-✔ solo quien figura como pauser puede pausar, y la operación pausada no ejecuta (10.0037ms)
-✔ lo que no cabe vuelve bloqueado con la razón escrita, no con un fallo mudo (11.1577ms)
-✔ el registro es un archivo que la persona puede abrir sin Farolero (16.1488ms)
+✔ el núcleo que consume Farolero es el corte fijado, módulo por módulo (108.9324ms)
+✔ el encabezado de los cinco módulos declara el mismo commit (2.0965ms)
+✔ sin permiso, la ejecución queda bloqueada y vuelve a la persona con la salida (13.6471ms)
+✔ con el permiso vencido, el bloqueo nombra la hora en que murió (10.0098ms)
+✔ con el mismo permiso y otro destino, el bloqueo nombra los dos destinos (8.9481ms)
+✔ el presupuesto es un límite duro y se acumula entre ejecuciones (18.2385ms)
+✔ un delegado no puede recibir más de lo que su delegante tiene (12.943ms)
+✔ el mismo efecto no se ejecuta dos veces: el segundo intento devuelve el recibo del primero (18.0552ms)
+✔ un recibo editado a mano no verifica (13.6253ms)
+✔ un verificador que solo cree al ejecutor no puede producir un verde en la auditoría (18.0983ms)
+✔ solo quien figura como pauser puede pausar, y la operación pausada no ejecuta (8.6431ms)
+✔ lo que no cabe vuelve bloqueado con la razón escrita, no con un fallo mudo (8.6564ms)
+✔ el registro es un archivo que la persona puede abrir sin Farolero (15.1979ms)
 ℹ tests 13
 ℹ suites 0
 ℹ pass 13
@@ -23,4 +23,4 @@ Summary: tests 13 pass 13 fail 0 cancelled 0 skipped 0 todo 0
 ℹ cancelled 0
 ℹ skipped 0
 ℹ todo 0
-ℹ duration_ms 377.0687
+ℹ duration_ms 409.3888
