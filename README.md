@@ -129,7 +129,7 @@ Farolero is not a passive directory, an identity system, a configuration dashboa
 
 ## Evidence you can open
 
-The captured suite dated 2026-10-09 reports 13 tests: 13 pass, none unsuccessful, none skipped, under Node v24.15.0. It covers permission boundaries, delegation, expiry, pausing authority, blocked returns, receipt tampering, verification, repeated effects, budget limits, and a readable local record. The 2026-10-03 capture was red because the project was pinned to an older kernel cut (0.1.3); that pin update to 0.1.6 (commit `95f2d61`) is now recorded and checked module by module in `docs/suite-2026-10-09.txt`.
+The captured suite dated 2026-10-11 reports 13 tests: 13 pass, none unsuccessful, none skipped, under Node v24.15.0. It covers permission boundaries, delegation, expiry, pausing authority, blocked returns, receipt tampering, verification, repeated effects, budget limits, and a readable local record. The 2026-10-03 capture was red because the project was pinned to an older kernel cut (0.1.3); that pin update to 0.1.6 (commit `95f2d61`) is now recorded and checked module by module in `docs/suite-2026-10-11.txt`.
 
 The adversarial phase wrote eight project RED cases before code and observed each one stay red. The available sources do not map those original cases one by one to the current test names. These are project checks, not an external audit. Read [Evidence](./docs/EVIDENCE.md) for the names, phase record, and rerun instructions.
 
@@ -268,7 +268,7 @@ Farolero no es un directorio pasivo, un sistema de identidad, un panel de config
 
 ## Evidencia que puedes abrir
 
-La suite capturada el 2026-10-09 informa 13 pruebas: 13 pasan, ninguna sin pasar, ninguna omitida, con Node v24.15.0. Cubre límites de permisos, delegación, vencimiento, autoridad para pausar, devoluciones bloqueadas, manipulación de recibos, verificación, efectos repetidos, presupuesto y un registro local legible. La captura del 2026-10-03 quedó en rojo porque el proyecto estaba fijado a un corte viejo del kernel (0.1.3); esa actualización del pin a 0.1.6 (commit `95f2d61`) ya está registrada y comprobada módulo por módulo en `docs/suite-2026-10-09.txt`.
+La suite capturada el 2026-10-11 informa 13 pruebas: 13 pasan, ninguna sin pasar, ninguna omitida, con Node v24.15.0. Cubre límites de permisos, delegación, vencimiento, autoridad para pausar, devoluciones bloqueadas, manipulación de recibos, verificación, efectos repetidos, presupuesto y un registro local legible. La captura del 2026-10-03 quedó en rojo porque el proyecto estaba fijado a un corte viejo del kernel (0.1.3); esa actualización del pin a 0.1.6 (commit `95f2d61`) ya está registrada y comprobada módulo por módulo en `docs/suite-2026-10-11.txt`.
 
 La fase adversarial escribió ocho casos RED del proyecto antes del código y observó fallar cada uno. Las fuentes disponibles no relacionan esos casos originales uno por uno con los nombres actuales de pruebas. Son comprobaciones del proyecto, no una auditoría externa. Consulta [Evidencia](./docs/EVIDENCE.md) para ver los nombres, el registro de fases y cómo repetirlas.
 
