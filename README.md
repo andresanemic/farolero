@@ -55,7 +55,7 @@ Imagine a fictional archive that asks an agent to add a line to a local project 
 
 ## What it looks like in practice
 
-The case below is fictional. It follows the agreement’s rules rather than pretending to show output from the program. The repository contains no captured output for the walkthrough command, so the only terminal-style excerpts here are exact test names and statuses from the supplied suite capture.
+The case below is fictional. It follows the agreement’s rules rather than pretending to show output from the program. The repository contains no captured output for the walkthrough command, so the only terminal-style excerpts here are exact test names and statuses from the recorded suite capture.
 
 Suppose a fictional community archive wants an agent called *Scribe* to add one entry to a local record. The person granting authority fixes the subject, operation, end time, budget, and destination. A second fictional agent, *Index*, can receive a smaller permission. The request to add the entry at the named local destination fits; a request to send it to another destination does not. That second request comes back blocked with a reason and a next step for the person, rather than being silently redirected.
 
