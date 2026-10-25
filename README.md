@@ -173,8 +173,6 @@ Start with [How it works](./docs/HOW_IT_WORKS.md) for the agreement translated i
 
 <a id="espanol"></a>
 
-<p align="center"><b>Funcionó.</b></p>
-
 **Farolero es un proyecto para volver visible la autoridad de un agente de IA antes de que actúe.**
 
 > **La unidad es un permiso acotado: quién puede hacer qué, respecto de qué sujeto, para qué operación, hasta cuándo, con qué presupuesto y hacia qué destino.**
