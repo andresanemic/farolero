@@ -1,0 +1,26 @@
+Suite capture — farolero — 2026-10-26
+Command: node --test test/*.test.js (clone of commit 408bb2d with the kernel 0.1.8 re-pin applied, empty HOME)
+Node: v24.22.1 · Kernel: Vespi 0.1.8, commit 13dbe24310dab2a12eee26ad51dfdfddbff5458b (tag v0.1.8-kernel), copied in vendor/vespi-kernel
+Summary: tests 13 pass 13 fail 0 cancelled 0 skipped 0 todo 0 
+
+✔ el núcleo que consume Farolero es el corte fijado, módulo por módulo (95.0833ms)
+✔ el encabezado de los cinco módulos declara el mismo commit (3.0627ms)
+✔ sin permiso, la ejecución queda bloqueada y vuelve a la persona con la salida (12.2223ms)
+✔ con el permiso vencido, el bloqueo nombra la hora en que murió (9.4873ms)
+✔ con el mismo permiso y otro destino, el bloqueo nombra los dos destinos (7.3193ms)
+✔ el presupuesto es un límite duro y se acumula entre ejecuciones (16.965ms)
+✔ un delegado no puede recibir más de lo que su delegante tiene (11.8171ms)
+✔ el mismo efecto no se ejecuta dos veces: el segundo intento devuelve el recibo del primero (17.7045ms)
+✔ un recibo editado a mano no verifica (13.4145ms)
+✔ un verificador que solo cree al ejecutor no puede producir un verde en la auditoría (18.8825ms)
+✔ solo quien figura como pauser puede pausar, y la operación pausada no ejecuta (8.3033ms)
+✔ lo que no cabe vuelve bloqueado con la razón escrita, no con un fallo mudo (9.2639ms)
+✔ el registro es un archivo que la persona puede abrir sin Farolero (12.635ms)
+ℹ tests 13
+ℹ suites 0
+ℹ pass 13
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 396.3374

@@ -342,7 +342,7 @@ class Farolero {
       return { estado: 'repetido', detalle: `el efecto ${peticion.clave} ya ocurrió; no se repite`, salida: 'nada que hacer', recibo: previo.recibo };
     }
     const cap = this.capacidad(peticion, op.puerta, opciones.verificador);
-    // El kernel 0.1.6 usa el reloj real salvo que se le inyecte `now`; se le pasa
+    // El kernel 0.1.8 usa el reloj real salvo que se le inyecte `now`; se le pasa
     // el mismo `now` que evaluar() usó para la puerta, o el permiso vence el 2026-10-01.
     const io = { verify: cap.io.verify, ask: async () => ({ approved: false, by: 'nadie' }) };
     if (typeof opciones.now === 'function') io.now = opciones.now;

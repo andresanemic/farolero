@@ -1,5 +1,7 @@
 # Farolero evidence
 
+> **2026-10-26:** re-pinned to Vespi kernel 0.1.8 (release `v0.1.8-kernel`, commit `13dbe24`); [`suite-2026-10-26.txt`](./suite-2026-10-26.txt) reports 13 of 13 pass. The records below describe the 2026-10-11 capture. · **26 oct. 2026:** nueva fijación al kernel de Vespi 0.1.8; 13 de 13 aprobadas. Los registros de abajo describen la captura del 2026-10-11.
+
 ## What was available for this review
 
 The review snapshot includes the project agreement, phase record, and a captured test output dated 2026-10-11 (`docs/suite-2026-10-11.txt`). The source code is in this repository under the review-only license; the review snapshot itself does not include a testnet run or public transaction evidence. The agreement says the example data is synthetic, the effect is local and reversible, and the project has no blockchain, payment, network, or institutional integration.
