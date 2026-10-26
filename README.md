@@ -17,7 +17,7 @@
 <p align="center"><b>Farolero</b> — give an AI agent a vague instruction and later nobody can say what it was allowed to do.<br>
 The permission, the spending limit and a readable record of what the agent actually did. Evidence: 13/13 tests. Fictional data; the agent's effects are local and reversible.</p>
 
-<p align="center"><b>We submitted Vespi to the Find Your Way hackathon and plan to participate in Meridian.</b></p>
+<p align="center"><b>Part of Vespi's HackMeridian 2026 submission, as evidence of what Vespi and Lore Plugin let a person build.</b></p>
 <p align="center"><b>For judges:</b> <a href="./docs/HOW_IT_WORKS.md">How it works</a> · <a href="./docs/EVIDENCE.md">Evidence</a> · <a href="./docs/LEGAL_AND_LIMITS.md">Limits</a> · <a href="./LICENSE">Review-only license</a>.<br>The source is in this repository: run <code>npm test</code> on Node 24.</p>
 
 **Run it / Córrelo**
